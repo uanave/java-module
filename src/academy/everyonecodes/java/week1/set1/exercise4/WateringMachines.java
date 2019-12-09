@@ -10,7 +10,7 @@ public class WateringMachines {
         int machine = 1;
         int plantsWateredByOneMachine = 4;
         int numberOfWateringMachinesToBuy = (plants / plantsWateredByOneMachine) - machine;
-        int pricePerMachine = 40;
+        int pricePerMachine = 20;
         int discount = 20;
         double discountValue = doDiscount(discount, pricePerMachine);
         double finalCost = numberOfWateringMachinesToBuy * (pricePerMachine - discountValue);
