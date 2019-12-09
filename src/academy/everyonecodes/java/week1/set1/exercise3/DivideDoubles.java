@@ -6,9 +6,9 @@ public class DivideDoubles {
     }
 
     public static void main(String[] args) {
-        double nbOne = 57.5;
-        double nbTwo = 5.5;
-        double quotient = divide(nbOne, nbTwo);
+        double numberOne = 57.5;
+        double numberTwo = 5.5;
+        double quotient = divide(numberOne, numberTwo);
         System.out.println("The quotient is " + quotient);
     }
 }
