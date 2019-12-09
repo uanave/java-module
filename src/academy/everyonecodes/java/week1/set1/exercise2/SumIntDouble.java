@@ -12,11 +12,11 @@ public class SumIntDouble {
     public static void main(String[] args) {
         int numberOne = 30;
         int numberTwo = 12;
-        int sumInt = numberOne + numberTwo;
+        int sumInteger = sumInt(numberOne, numberTwo);
         double numberThree = 6.1;
         double numberFour = 6.1;
-        double sumDouble = numberThree + numberFour;
-        System.out.println("The int sum is " + sumInt);
+        double sumDouble = sumDouble(numberThree, numberFour);
+        System.out.println("The int sum is " + sumInteger);
         System.out.println("The int sum is " + sumDouble);
     }
 }
