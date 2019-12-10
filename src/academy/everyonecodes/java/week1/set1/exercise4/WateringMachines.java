@@ -1,7 +1,7 @@
 package academy.everyonecodes.java.week1.set1.exercise4;
 
 public class WateringMachines {
-    public static double doDiscount(double discount, int price){
+    public static double doDiscount(double discount, int price) {
         return (discount / 100) * price;
     }
 
