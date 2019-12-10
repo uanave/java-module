@@ -1,4 +1,0 @@
-divide
-numberOne = 60.5
-numberTwo = 6.5
-->9.307
