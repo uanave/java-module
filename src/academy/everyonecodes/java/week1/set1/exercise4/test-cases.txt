@@ -1,0 +1,4 @@
+doDiscount
+price = 40
+discount = 20.0
+->64

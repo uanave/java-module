@@ -1,0 +1,8 @@
+sumInt
+numberOne = 40
+numberTwo = 2
+-> 42
+sumDouble
+numberThree = 5.1
+numberFour = 7.1
+-> 12.2
