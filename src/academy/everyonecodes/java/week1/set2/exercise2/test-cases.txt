@@ -1,0 +1,8 @@
+Test Cases:
+
+combine
+["dog", "cat", "bird"], ["table", "chair", "lamp"]                  -> ["dog", "table", "cat", "chair", "bird", "lamp"]
+["dog", "cat", "bird"], ["table", "chair", "lamp", "cat", "monkey"] -> ["dog", "table", "cat", "chair", "bird", "lamp", "cat", "monkey"]
+["dog", "cat", "bird", "cat", "monkey"], ["table", "chair", "lamp"] -> ["dog", "table", "cat", "chair", "bird", "lamp", "cat", "monkey"]
+["dog", "cat", "bird"], []                                          -> ["dog", "cat", "bird"]
+[], ["dog", "cat", "bird", "pig"]                                   -> ["dog", "cat", "bird", "pig"]
