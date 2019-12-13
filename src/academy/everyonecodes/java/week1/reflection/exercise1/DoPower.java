@@ -11,6 +11,6 @@ public class DoPower {
     }
 
     public static void main(String[] args) {
-        int result = raiseToPower(2, 5);
+        int result = raiseToPower(5, 2);
     }
 }

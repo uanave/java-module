@@ -11,6 +11,9 @@ public class RoboMentalist {
             while (number < 1 || number > 10) {
                 System.out.println("Say a number from 1 to 10");
                 number = scanner.nextInt();
+                if (number >= 1 && number <= 10) {
+                    System.out.println("Alright! Let's perform a trick with " + number);
+                }
             }
         } else {
             System.out.println("Alright! Let's perform a trick with " + number);
