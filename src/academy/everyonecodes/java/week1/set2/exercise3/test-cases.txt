@@ -3,13 +3,13 @@ Test cases:
 isBigger
 7, 2   -> true
 2, 7   -> false
-2, 2   -> false
+0, 0   -> false
 -1, -5 -> true
 
 isSmaller
 7, 2   -> false
 2, 7   -> true
-2, 2   -> false
+0, 0   -> false
 -1, -5 -> false
 
 getBiggest
