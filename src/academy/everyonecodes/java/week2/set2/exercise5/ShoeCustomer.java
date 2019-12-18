@@ -7,12 +7,8 @@ public class ShoeCustomer {
         this.size = size;
     }
 
-    public int getSize() {
-        return size;
-    }
-
     public boolean tryShoe(Shoe shoeToTry) {
-        if (shoeToTry.getSize() == this.getSize()) {
+        if (shoeToTry.getSize() == size) {
             return true;
         } else {
             return false;

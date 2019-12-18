@@ -4,9 +4,12 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-        List<Integer> steps = StepCollector.collect();
-        double average = AverageCalculator.calculateAverage(steps);
-        double distance = DistanceCalculator.calculateDistanceInKilometers(average);
+        StepCollector stepCollector = new StepCollector();
+        List<Integer> steps = stepCollector.collect();
+        AverageCalculator averageCalculator = new AverageCalculator();
+        double average = averageCalculator.calculateAverage(steps);
+        DistanceCalculator distanceCalculator = new DistanceCalculator();
+        double distance = distanceCalculator.calculateDistanceInKilometers(average);
         System.out.println("The average in kilometers is " + distance);
     }
 }

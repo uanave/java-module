@@ -5,6 +5,7 @@ public class Application {
         ShoeCustomer firstCustomer = new ShoeCustomer(38);
         ShoeCustomer secondCustomer = new ShoeCustomer(42);
         ShopAssistant assistant = new ShopAssistant();
+
         assistant.findShoeForCustomer(firstCustomer);
         assistant.findShoeForCustomer(secondCustomer);
     }

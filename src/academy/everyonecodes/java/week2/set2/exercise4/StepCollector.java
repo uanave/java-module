@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class StepCollector {
-    public static List<Integer> collect() {
+    public List<Integer> collect() {
         List<Integer> steps = new ArrayList<>();
         List<String> friends = List.of("Matilda", "Hansel", "Derek");
         for (String friend : friends) {

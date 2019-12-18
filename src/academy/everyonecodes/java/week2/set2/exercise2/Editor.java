@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Editor {
-    public static Magazine writeMagazine() {
+    public Magazine writeMagazine() {
         List<Article> articles = new ArrayList<>();
         Article firstArticle = new Article("Title 1", "Cupcake ipsum dolor sit. Amet cotton candy gingerbread icing macaroon. Marzipan pie pastry croissant macaroon jelly-o. Oat cake jelly-o tart.");
         Article secondArticle = new Article("Title 2", "Liquorice sesame snaps tootsie roll jujubes halvah pastry danish biscuit chupa chups. Cake oat cake sweet. Dessert sugar plum wafer biscuit pie oat cake pastry sesame snaps dragée.");

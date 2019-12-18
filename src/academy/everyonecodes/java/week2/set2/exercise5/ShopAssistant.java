@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShopAssistant {
-    public static void findShoeForCustomer(ShoeCustomer customer) {
+    public void findShoeForCustomer(ShoeCustomer customer) {
         List<Shoe> shoes = new ArrayList<>();
         shoes.add(new Shoe(39, "pink"));
         shoes.add(new Shoe(40, "red"));

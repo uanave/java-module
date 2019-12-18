@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class HikeGatherer {
-    public static List<Hiker> gather() {
+    public List<Hiker> gather() {
         Scanner scanner = new Scanner(System.in);
         List<Hiker> hikers = new ArrayList<>();
         System.out.println("What is your name?");
