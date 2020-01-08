@@ -1,0 +1,101 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: JumpCalculatorTest</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">academy.everyonecodes.java.week3.set2.exercise3</a> ]
+</div>
+
+<h1>Coverage Summary for Class: JumpCalculatorTest (academy.everyonecodes.java.week3.set2.exercise3)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">JumpCalculatorTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package academy.everyonecodes.java.week3.set2.exercise3;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.junit.jupiter.params.ParameterizedTest;
+<i>4</i>&nbsp;import org.junit.jupiter.params.provider.CsvSource;
+<i>5</i>&nbsp;
+<b class="fc"><i>6</i>&nbsp;class JumpCalculatorTest {</b>
+<b class="fc"><i>7</i>&nbsp;    JumpCalculator jumpCalculator = new JumpCalculator();</b>
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;    @ParameterizedTest
+<i>10</i>&nbsp;    @CsvSource({
+<i>11</i>&nbsp;            &quot;0, 0&quot;,
+<i>12</i>&nbsp;            &quot;6, 1&quot;,
+<i>13</i>&nbsp;    })
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    void calculate(int expected, int input) {
+<b class="fc"><i>16</i>&nbsp;        int result = jumpCalculator.calculate(input);</b>
+<b class="fc"><i>17</i>&nbsp;    }</b>
+<i>18</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-01-08 14:54</div>
+</div>
+</body>
+</html>
