@@ -3,16 +3,18 @@ package academy.everyonecodes.java.week3.set1.exercise3;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 class ReverseNumbersTest {
     ReverseNumbers reverseNumbers = new ReverseNumbers();
 
     @Test
     void reverse() {
-        int[] input = {1, 2, 3, 4};
+        List<Integer> input = List.of(1, 2, 3, 4);
 
-        int[] result = reverseNumbers.reverse(input);
+        List<Integer> result = reverseNumbers.reverse(input);
 
-        int[] expected = {4, 3, 2, 1};
-        Assertions.assertArrayEquals(expected, result);
+        List<Integer> expected = List.of(4, 3, 2, 1);
+        Assertions.assertEquals(expected, result);
     }
 }

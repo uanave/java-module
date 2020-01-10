@@ -1,10 +1,10 @@
 package academy.everyonecodes.java.christmas.Exercise3;
 
-public class Burger {
+public class BurgerAndFries {
     private String name;
     private double price;
 
-    public Burger(String name, double price) {
+    public BurgerAndFries(String name, double price) {
         this.name = name;
         this.price = price;
     }

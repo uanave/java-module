@@ -5,7 +5,7 @@ public class Application {
         Product cheese = new Product("cheese", 4);
         Product bread = new Product("bread", 2);
 
-        int cheesePrice = cheese.getPrice();
+        double cheesePrice = cheese.getPrice();
         cheese.setPrice(cheesePrice + 1);
         System.out.println(cheese.getPrice());
 

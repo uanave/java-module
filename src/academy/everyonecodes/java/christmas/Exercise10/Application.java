@@ -2,7 +2,7 @@ package academy.everyonecodes.java.christmas.Exercise10;
 
 public class Application {
     public static void main(String[] args) {
-        CheckPerson checkPerson = new CheckPerson();
+        PersonVerifier checkPerson = new PersonVerifier();
         boolean hasLegalAge = checkPerson.isAdult();
         boolean wearsHat = checkPerson.isWearingAHat();
         boolean knowsPassword = checkPerson.knowsSecretPassword();

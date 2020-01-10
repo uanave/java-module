@@ -1,12 +1,15 @@
 package academy.everyonecodes.java.week3.set1.exercise3;
 
-public class ReverseNumbers {
-    public int[] reverse(int[] randomNumbers) {
-        int[] result = new int[randomNumbers.length];
-        for (int i = 0, j = result.length - 1; i < randomNumbers.length; i++, j--) {
-            result[j] = randomNumbers[i];
-        }
+import java.util.ArrayList;
+import java.util.List;
 
-        return result;
+public class ReverseNumbers {
+    public List<Integer> reverse(List<Integer> numbers) {
+        ArrayList<Integer> numbersReversed = new ArrayList<>(numbers.size());
+        for (int i = numbers.size() - 1; i >= 0; i--) {
+            numbersReversed.add(numbers.get(i));
+        }
+        return numbersReversed;
     }
 }
+

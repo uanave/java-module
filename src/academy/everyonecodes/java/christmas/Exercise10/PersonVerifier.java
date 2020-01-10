@@ -2,7 +2,7 @@ package academy.everyonecodes.java.christmas.Exercise10;
 
 import java.util.Scanner;
 
-public class CheckPerson {
+public class PersonVerifier {
     public boolean isAdult() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Are you 18 or older?");

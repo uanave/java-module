@@ -4,13 +4,12 @@ import java.util.*;
 
 public class Application {
     public static void main(String[] args) {
-        String[] photoNames = {"DSC0001.jpg", "DSC0002.jpg", "DSC0003.jpg", "DSC0004.jpg"};
-        List<String> photoNamesRenamed = new ArrayList<>();
+        List<String> photoNames = List.of("DSC0001.jpg", "DSC0002.jpg", "DSC0003.jpg", "DSC0004.jpg");
+        List<String> photoNamesRenamed = new ArrayList<>(photoNames.size());
         for (String photoName : photoNames) {
-            String renamedPhoto = photoName.replaceAll("jpg", "png");
-            photoNamesRenamed.add(renamedPhoto);
+            photoName.replaceAll("jpg", "png");
+            photoNamesRenamed.add(photoName);
         }
-
         System.out.println(photoNamesRenamed);
     }
 }
