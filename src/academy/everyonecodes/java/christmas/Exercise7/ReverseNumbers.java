@@ -1,12 +1,16 @@
 package academy.everyonecodes.java.christmas.Exercise7;
 
-public class ReverseNumbers {
-    public int[] reverse(int[] randomNumbers) {
-        int[] result = new int[randomNumbers.length];
-        for (int i = 0, j = result.length - 1; i < randomNumbers.length; i++, j--) {
-            result[j] = randomNumbers[i];
-        }
+import java.util.ArrayList;
+import java.util.List;
 
-        return result;
+public class ReverseNumbers {
+    public List<Integer> reverse(List<Integer> randomNumbers) {
+        List<Integer> reversedNumbers = new ArrayList<>();
+        for (int i = randomNumbers.size()-1; i >= 0; i--) {
+            int number = randomNumbers.get(i);
+            reversedNumbers.add(number);
+        }
+        return reversedNumbers;
+
     }
 }
