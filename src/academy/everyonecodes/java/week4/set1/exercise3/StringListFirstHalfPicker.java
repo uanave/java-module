@@ -9,7 +9,7 @@ public class StringListFirstHalfPicker {
         List<String> randomWordsFirstHalf = new ArrayList<>();
         int size = randomWords.size();
         double start = Math.floor((double) size/2);
-        for (int i = (int) start; i < size; i++) {
+        for (int i = 0; i < start; i++) {
             randomWordsFirstHalf.add(randomWords.get(i));
         }
         Random random = new Random();
