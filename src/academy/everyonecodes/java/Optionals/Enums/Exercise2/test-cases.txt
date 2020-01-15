@@ -1,0 +1,7 @@
+Drawer
+
+getOutfitForToday
+2,5   -> TUESDAY, MAY
+0,5   -> Error(Invalid value for DayOfWeek: 0)
+1,0   -> Error(Invalid value for MonthOfYear: 0)
+7, 13 -> Error (Invalid value for MonthOfYear: 13)
