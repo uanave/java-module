@@ -5,15 +5,15 @@ import java.util.List;
 import java.util.Random;
 
 public class StringListFirstHalfPicker {
-    public String pick(List<String> randomWords) {
-        List<String> randomWordsFirstHalf = new ArrayList<>();
-        int size = randomWords.size();
-        double start = Math.floor((double) size/2);
-        for (int i = 0; i < start; i++) {
-            randomWordsFirstHalf.add(randomWords.get(i));
+    public String pick(List<String> strings) {
+        if (strings.size() == 1) {
+            return strings.get(0);
         }
         Random random = new Random();
-        int index = random.nextInt(randomWordsFirstHalf.size());
-        return randomWordsFirstHalf.get(index);
+        int size = strings.size();
+        int max = size / 2;
+        int randomIndex = random.nextInt(max);
+        return strings.get(randomIndex);
     }
 }
+

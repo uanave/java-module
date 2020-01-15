@@ -5,14 +5,13 @@ import java.util.List;
 import java.util.Random;
 
 public class StringListSecondHalfPicker {
-    public String pick(List<String> randomWords) {
-        List<String> secondHalfOfRandomWords = new ArrayList<>();
-        int size = randomWords.size();
-        for (int i = size/2; i < size; i++) {
-                secondHalfOfRandomWords.add(randomWords.get(i));
-        }
+    public String pick(List<String> strings) {
         Random random = new Random();
-        int randomIndex = random.nextInt(secondHalfOfRandomWords.size());
-        return secondHalfOfRandomWords.get(randomIndex);
+        int size = strings.size();
+        int half = size / 2;
+        int relativeMax = size - half;
+        int randomIndex = random.nextInt(relativeMax) + half;
+        return strings.get(randomIndex);
+
     }
 }
