@@ -1,11 +1,10 @@
 package academy.everyonecodes.java.week3.reflection.exercise1;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class PoundsToEurosConverterTest {
+class PoundToEuroConverterTest {
     PoundToEuroConverter poundsToEurosConverter = new PoundToEuroConverter();
 
     @ParameterizedTest
