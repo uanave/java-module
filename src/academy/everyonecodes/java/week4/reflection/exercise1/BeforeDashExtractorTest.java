@@ -2,33 +2,20 @@ package academy.everyonecodes.java.week4.reflection.exercise1;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class BeforeDashExtractorTest {
     BeforeDashExtractor beforeDashExtractor = new BeforeDashExtractor();
 
-    @Test
-    void extract() {
-        String input = "my-string";
+    @ParameterizedTest
+    @CsvSource({
+            "my, my-string",
+            "Some, Some-example",
+            "'', ''",
+    })
+    void extract(String expected, String input) {
         String result = beforeDashExtractor.extract(input);
-        String expected = "my";
-
-        Assertions.assertEquals(expected, result);
-    }
-
-    @Test
-    void extractEmpty() {
-        String input = "";
-        String result = beforeDashExtractor.extract(input);
-        String expected = "";
-
-        Assertions.assertEquals(expected, result);
-    }
-
-    @Test
-    void extractWithNumbers() {
-        String input = "Adgr45-AA0";
-        String result = beforeDashExtractor.extract(input);
-        String expected = "Adgr45";
 
         Assertions.assertEquals(expected, result);
     }

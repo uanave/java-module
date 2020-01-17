@@ -15,12 +15,10 @@ class MaxOrMinPickerTest {
     void pick() {
         List<Integer> input = List.of(1, 2, 3, 4);
         int result = maxOrMinPicker.pick(input);
-        Random random = new Random();
 
-        int rand = random.nextInt(input.size());
-        int expected = input.indexOf(rand);
+        boolean expected = input.contains(result);
 
-        Assertions.assertEquals(expected, result);
+        Assertions.assertTrue(expected);
     }
 
 
