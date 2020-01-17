@@ -12,9 +12,9 @@ public class FilmCharacterParserTest {
 
     private static Stream<Arguments> provideArguments() {
         return Stream.of(
-        Arguments.of(new FilmCharacter ("Anakin", "Skywalker"), "Anakin;Skywalker"),
-        Arguments.of(new FilmCharacter ("Frodo", "Bagins"), "Frodo;Bagins"),
-        Arguments.of(new FilmCharacter ("Spongebob", "Squarepants"), "Spongebob;Squarepants")
+        Arguments.of(new FilmCharacter("Anakin", "Skywalker"), "Anakin;Skywalker"),
+        Arguments.of(new FilmCharacter("Frodo", "Bagins"), "Frodo;Bagins"),
+        Arguments.of(new FilmCharacter("Spongebob", "Squarepants"), "Spongebob;Squarepants")
         );
     }
 

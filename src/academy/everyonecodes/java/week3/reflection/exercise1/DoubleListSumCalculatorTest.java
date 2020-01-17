@@ -8,14 +8,16 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.List;
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.params.provider.Arguments.arguments;
+
 class DoubleListSumCalculatorTest {
     DoubleListSumCalculator doubleListSumCalculator = new DoubleListSumCalculator();
 
     private static Stream<Arguments> provideLists() {
         return Stream.of(
-                Arguments.of(4.0, List.of(1.5, 2.5)),
-                Arguments.of(7.5, List.of(1.5, 2.5, 3.5)),
-                Arguments.of(1.0, List.of(1.0))
+                arguments(4.0, List.of(1.5, 2.5)),
+                arguments(7.5, List.of(1.5, 2.5, 3.5)),
+                arguments(0.0, List.of())
         );
     }
 
