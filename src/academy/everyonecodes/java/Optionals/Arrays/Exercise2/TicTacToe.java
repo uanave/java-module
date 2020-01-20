@@ -24,7 +24,7 @@ public class TicTacToe {
         }
     }
 
-    private String[][] playOneRound(String[][] gameField, String playerName, String symbol) {
+    private void playOneRound(String[][] gameField, String playerName, String symbol) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(playerName + ", what is your next move? (Row: [0, 1, 2], press Enter, Column: [0, 1, 2])");
         int[] move = new int[2];
@@ -34,7 +34,6 @@ public class TicTacToe {
         }
         gameField[move[0]][move[1]] = symbol;
         printGameField(gameField);
-        return gameField;
     }
 
     public void play() {
