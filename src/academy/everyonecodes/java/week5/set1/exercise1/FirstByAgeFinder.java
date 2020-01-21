@@ -5,9 +5,9 @@ import java.util.Optional;
 
 public class FirstByAgeFinder {
 
-    public Optional<Person> find(List<Person> input1, int inputAge) {
-        if (input1.size() > 0) {
-            for (Person item : input1) {
+    public Optional<Person> find(List<Person> people, int inputAge) {
+        if (people.size() > 0) {
+            for (Person item : people) {
                 if (item.getAge() == inputAge) {
                     return Optional.of(item);
                 }

@@ -4,15 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 public class IntegerListAverageCalculator {
-    public Optional<Double> calculate(List<Integer> input) {
-        if (input.size() < 1) {
+    public Optional<Double> calculate(List<Integer> numbers) {
+        if (numbers.isEmpty()) {
             return Optional.empty();
         } else {
             double sum = 0;
-            for (Integer number : input) {
+            for (Integer number : numbers) {
                 sum += number;
             }
-            return Optional.of(sum/input.size());
+            return Optional.of(sum / numbers.size());
         }
     }
 }

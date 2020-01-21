@@ -13,10 +13,10 @@ public class FirstByAgeFinderTest {
     void find() {
         Person bob = new Person("Bob", 12);
         Person michael = new Person("Michael", 16);
-        List<Person> input1 = List.of(bob, michael);
+        List<Person> people = List.of(bob, michael);
 
         int inputAge = 12;
-        Optional<Person> oResult = firstByAgeFinder.find(input1, inputAge);
+        Optional<Person> oResult = firstByAgeFinder.find(people, inputAge);
 
         Person expected = bob;
 
@@ -29,19 +29,19 @@ public class FirstByAgeFinderTest {
     void findNoPersonWithAge() {
         Person bob = new Person("Bob", 17);
         Person michael = new Person("Michael", 16);
-        List<Person> input1 = List.of(bob, michael);
+        List<Person> people = List.of(bob, michael);
 
         int inputAge = 12;
-        Optional<Person> oResult = firstByAgeFinder.find(input1, inputAge);
+        Optional<Person> oResult = firstByAgeFinder.find(people, inputAge);
         Assertions.assertTrue(oResult.isEmpty());
     }
 
     @Test
     void findEmpty() {
-        List<Person> input = List.of();
+        List<Person> people = List.of();
         int inputAge = 12;
 
-        Optional<Person> oResult = firstByAgeFinder.find(input, inputAge);
+        Optional<Person> oResult = firstByAgeFinder.find(people, inputAge);
 
         Assertions.assertTrue(oResult.isEmpty());
     }
