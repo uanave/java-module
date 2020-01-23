@@ -1,6 +1,5 @@
 package academy.everyonecodes.java.week5.set2.exercise7;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

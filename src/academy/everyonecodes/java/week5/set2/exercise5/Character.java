@@ -1,7 +1,5 @@
 package academy.everyonecodes.java.week5.set2.exercise5;
 
-import java.util.Optional;
-
 public class Character {
     private String name;
     private int bookOfDeath;

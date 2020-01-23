@@ -1,7 +1,5 @@
 package academy.everyonecodes.java.week5.set2.exercise5;
 
-import academy.everyonecodes.java.week5.set2.exercise4.HappinessRecord;
-
 import java.util.List;
 import java.util.Optional;
 

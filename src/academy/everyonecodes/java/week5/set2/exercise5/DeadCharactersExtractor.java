@@ -1,6 +1,5 @@
 package academy.everyonecodes.java.week5.set2.exercise5;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
