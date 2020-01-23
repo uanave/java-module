@@ -17,11 +17,10 @@ public class DeathsInBookCounterTest {
 
         int bookName = 3;
 
-        Optional<Integer> oResult = deathsInBookCounter.count(characters, bookName);
+        int result = deathsInBookCounter.count(characters, bookName);
 
         int expected = 97;
-        Assertions.assertTrue(oResult.isPresent());
-        Assertions.assertEquals(expected, oResult.get());
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
@@ -30,11 +29,10 @@ public class DeathsInBookCounterTest {
 
         int bookName = 4;
 
-        Optional<Integer> oResult = deathsInBookCounter.count(characters, bookName);
+        int result = deathsInBookCounter.count(characters, bookName);
 
         int expected = 27;
-        Assertions.assertTrue(oResult.isPresent());
-        Assertions.assertEquals(expected, oResult.get());
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
@@ -43,7 +41,9 @@ public class DeathsInBookCounterTest {
 
         int bookName = 345;
 
-        Optional<Integer> oResult = deathsInBookCounter.count(characters, bookName);
-        Assertions.assertTrue(oResult.isEmpty());
+        int expected = 5;
+
+        int result = deathsInBookCounter.count(characters, bookName);
+        Assertions.assertNotEquals(expected, result);
     }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeadCharactersExtractor {
-    public List<String> extract(String contentRootPath) {
+    public void extract(String contentRootPath) {
         GotDataReader dataReader = new GotDataReader();
         String deathPath = "src/academy/everyonecodes/java/week5/set2/files/deaths.txt";
         Path path = Path.of(deathPath);
@@ -23,7 +23,6 @@ public class DeadCharactersExtractor {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return personNames;
 
     }
 }

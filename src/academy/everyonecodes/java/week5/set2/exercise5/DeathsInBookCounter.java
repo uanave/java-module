@@ -4,23 +4,19 @@ import java.util.List;
 import java.util.Optional;
 
 public class DeathsInBookCounter {
-    public Optional<Integer> count(List<Character> characters, int bookName) {
-        Optional<Integer> deathsInBook = Optional.empty();
+    public int count(List<Character> characters, int bookName) {
+        int deaths = 0;
         try {
             for (Character person : characters) {
                 int book = person.getBookOfDeath();
-                if(book == bookName) {
-                    if (deathsInBook.isPresent()) {
-                        deathsInBook = Optional.of(deathsInBook.get() + 1);
-                    } else {
-                        deathsInBook = Optional.of(1);
-                    }
+                if (book == bookName) {
+                    deaths++;
                 }
             }
-            return deathsInBook;
+            return deaths;
         } catch (NumberFormatException e) {
             e.printStackTrace();
-            return Optional.empty();
+            return deaths;
         }
     }
 }
