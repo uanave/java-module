@@ -15,7 +15,9 @@ public class StringOverlapFinderTest {
             "oat, 'boat', 'oatmeal'",
             "le, 'bottle', 'Leopard'",
             "'', 'banana', 'lame'",
-            "'', '', 'what'"
+            "'', '', 'what'",
+            "ana, 'ana', 'ana'",
+            "my, my, myPhone"
     })
     void find(String expected, String inputOne, String inputTwo) {
         Optional<String> oResult = stringOverlapFinder.find(inputOne, inputTwo);
