@@ -7,11 +7,7 @@ public class IntegerListToStringConverter {
     public List<String> convert(List<Integer> input) {
         List<String> inputAsString = new ArrayList<>();
         for (Integer number : input) {
-            try {
-                inputAsString.add(String.valueOf(number));
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-            }
+            inputAsString.add(String.valueOf(number));
         }
         return inputAsString;
     }
