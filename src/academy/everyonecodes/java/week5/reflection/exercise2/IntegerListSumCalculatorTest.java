@@ -13,28 +13,28 @@ public class IntegerListSumCalculatorTest {
     void sumWholeNumbers() {
         List<Integer> input = List.of(1, 2, 3, 4);
 
-        Optional<Integer> oResult = integerListSumCalculator.sum(input);
+        int result = integerListSumCalculator.sum(input);
 
         int expected = 10;
-        Assertions.assertEquals(expected, oResult.get());
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
     void sumNegativeNumbers() {
         List<Integer> input = List.of(-1, -8, -10, -4);
 
-        Optional<Integer> oResult = integerListSumCalculator.sum(input);
+        int result = integerListSumCalculator.sum(input);
 
         int expected = -23;
-        Assertions.assertEquals(expected, oResult.get());
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
     void sumEmptyList() {
         List<Integer> input = List.of();
 
-        Optional<Integer> oResult = integerListSumCalculator.sum(input);
+        int result = integerListSumCalculator.sum(input);
 
-        Assertions.assertTrue(oResult.isEmpty());
+        Assertions.assertTrue(result == 0);
     }
 }

@@ -11,7 +11,7 @@ public class StringToIntegerParser {
             try {
                 inputAsInteger.add(Integer.valueOf(number));
             } catch (NumberFormatException e) {
-                e.printStackTrace();
+                System.out.println(e);
             }
         }
         return inputAsInteger;
