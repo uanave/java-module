@@ -11,12 +11,12 @@ public class StringOverlapFinderTest {
 
     @ParameterizedTest
     @CsvSource({
-            "el, 'michael', 'elias'",
-            "oat, 'boat', 'oatmeal'",
-            "le, 'bottle', 'Leopard'",
-            "'', 'banana', 'lame'",
-            "'', '', 'what'",
-            "ana, 'ana', 'ana'",
+            "el, michael, elias",
+            "oat, boat, oatmeal",
+            "le, bottle, Leopard",
+            "'', banana, lame",
+            "'', '', what",
+            "ana, ana, ana",
             "my, my, myPhone"
     })
     void find(String expected, String inputOne, String inputTwo) {
