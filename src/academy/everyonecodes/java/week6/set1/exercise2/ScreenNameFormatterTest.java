@@ -2,38 +2,22 @@ package academy.everyonecodes.java.week6.set1.exercise2;
 
 import academy.everyonecodes.java.week6.set1.exercise1.Customer;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class ScreenNameFormatterTest {
     ScreenNameFormatter screenNameFormatter = new ScreenNameFormatter();
 
-    @Test
-    void createEconomy() {
-        Customer input = new Customer("John", "economy");
-        Customer expected = new Customer("john", "economy");
+    @ParameterizedTest
+    @CsvSource({
+            "JOHN, John, business",
+            "mary, Mary, economy",
+            "JENA, jena, business"
+    })
+    void create(String expected, String name, String customerClass) {
+        Customer firstCustomer = new Customer(name, customerClass);
 
-        Customer result = screenNameFormatter.create(input);
-        Assertions.assertEquals(expected.getName(), result.getName());
-        Assertions.assertEquals(expected.getCustomerClass(), result.getCustomerClass());
-    }
-
-    @Test
-    void createBusiness() {
-        Customer input = new Customer("John", "business");
-        Customer expected = new Customer("JOHN", "business");
-
-        Customer result = screenNameFormatter.create(input);
-        Assertions.assertEquals(expected.getName(), result.getName());
-        Assertions.assertEquals(expected.getCustomerClass(), result.getCustomerClass());
-    }
-
-    @Test
-    void createWrongClass() {
-        Customer input = new Customer("JOHN", "Economy");
-
-        Customer expected = new Customer("john", "economy");
-
-        Customer result = screenNameFormatter.create(input);
-        Assertions.assertEquals(expected.getName(), expected.getName());
+        String customerName = screenNameFormatter.create(firstCustomer);
+        Assertions.assertEquals(expected, customerName);
     }
 }

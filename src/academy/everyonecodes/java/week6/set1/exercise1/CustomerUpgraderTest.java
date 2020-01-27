@@ -1,30 +1,42 @@
 package academy.everyonecodes.java.week6.set1.exercise1;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class CustomerUpgraderTest {
     CustomerUpgrader customerUpgrader = new CustomerUpgrader();
 
-    @Test
-    void upgradeEconomy() {
-        Customer input = new Customer("John", "economy");
+    @ParameterizedTest
+    @CsvSource({
+            "business, John, economy",
+            "business, John, business"
+    })
+    void upgrade(String expected, String name, String customerClass) {
+        Customer firstCustomer = new Customer(name, customerClass);
 
-        Customer expected = new Customer("John", "business");
+        customerUpgrader.upgrade(firstCustomer);
 
-        Customer result = customerUpgrader.upgrade(input);
-        Assertions.assertEquals(expected.getName(), result.getName());
-        Assertions.assertEquals(expected.getCustomerClass(), result.getCustomerClass());
+        Assertions.assertEquals(expected, firstCustomer.getCustomerClass());
     }
 
-    @Test
-    void upgradeBusiness() {
-        Customer input = new Customer("John", "business");
 
-        Customer expected = new Customer("John", "business");
 
+    /* @ParameterizedTest
+    @MethodSource("testCasesProvider")
+    void upgrade(String expectedClass, Customer input) {
         Customer result = customerUpgrader.upgrade(input);
-        Assertions.assertEquals(expected.getName(), result.getName());
-        Assertions.assertEquals(expected.getCustomerClass(), result.getCustomerClass());
+        String resultingClass = result.getCustomerClass();
+        Assertions.assertEquals(expectedClass, resultingClass);
     }
+    private static Stream<Arguments> testCasesProvider() {
+        Customer one = new Customer("Riccardo", "economy");
+        Customer two = new Customer("Sercan", "business");
+        Customer three = new Customer("Oana", "Economy");
+        return Stream.of(
+                Arguments.of("business", one),
+                Arguments.of("business", two),
+                Arguments.of("business", three)
+        );
+    } */
 }
