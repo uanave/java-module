@@ -10,6 +10,7 @@ class SpecialNumbersCounterTest {
     @ParameterizedTest
     @CsvSource({
             "3, 95637",
+            "0, 7",
             "0, 785410",
             "2, 6598007",
             "2, 1335",
