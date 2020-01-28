@@ -3,11 +3,14 @@ package academy.everyonecodes.java.week6.set1.exercise2;
 import academy.everyonecodes.java.week6.set1.exercise1.Customer;
 
 public class ScreenNameFormatter {
-    public String create(Customer customer) {
-        customer.setName(customer.getName().toLowerCase());
+    public String format(Customer customer) {
+        String name = customer.getName();
         if (customer.getCustomerClass().equals("business")) {
-            customer.setName(customer.getName().toUpperCase());
+            return name.toUpperCase();
+        } else {
+            return name.toLowerCase();
         }
-        return customer.getName();
+
+
     }
 }

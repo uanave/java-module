@@ -45,7 +45,7 @@ class PublishedPostCounterTest {
                 new Post("Banana", "Bananas are ok", new Date(6, 2, 2020), true)
         ), new Date(1, 2, 2020));
 
-        int result = 0;
+        int result = 3;
 
         int expected = publishedPostCounter.count(input);
         Assertions.assertEquals(expected, result);

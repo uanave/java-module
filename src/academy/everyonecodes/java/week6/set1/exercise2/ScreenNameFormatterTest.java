@@ -10,14 +10,14 @@ class ScreenNameFormatterTest {
 
     @ParameterizedTest
     @CsvSource({
-            "JOHN, John, business",
+            "john, John, something else",
             "mary, Mary, economy",
             "JENA, jena, business"
     })
     void create(String expected, String name, String customerClass) {
         Customer firstCustomer = new Customer(name, customerClass);
 
-        String customerName = screenNameFormatter.create(firstCustomer);
+        String customerName = screenNameFormatter.format(firstCustomer);
         Assertions.assertEquals(expected, customerName);
     }
 }
