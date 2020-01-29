@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.Optionals.Enums.Exercise2;
+package academy.everyonecodes.java.optionals.Enums.Exercise2;
 
 public class Outfit {
     private Socks socks;

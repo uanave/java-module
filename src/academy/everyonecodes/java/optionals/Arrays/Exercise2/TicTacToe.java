@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.Optionals.Arrays.Exercise2;
+package academy.everyonecodes.java.optionals.Arrays.Exercise2;
 
 import java.util.Scanner;
 

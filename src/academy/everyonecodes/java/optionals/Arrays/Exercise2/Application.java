@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.Optionals.Arrays.Exercise2;
+package academy.everyonecodes.java.optionals.Arrays.Exercise2;
 
 public class Application {
     public static void main(String[] args) {
