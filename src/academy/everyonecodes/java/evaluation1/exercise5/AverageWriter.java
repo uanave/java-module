@@ -5,6 +5,7 @@ import academy.everyonecodes.java.evaluation1.exercise4.FileWriter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class AverageWriter {
 
@@ -20,16 +21,14 @@ public class AverageWriter {
 
         for (String input : inputAsList) {
             List<Integer> inputAsNumbers = stringToIntegerParser.parse(input);
-            double lineAverage = integerListAverageCalculator.calculate(inputAsNumbers);
-            averages.add(lineAverage);
+            Optional<Double> lineAverage = integerListAverageCalculator.calculate(inputAsNumbers);
+            lineAverage.ifPresent(averages::add);
         }
-        System.out.println(averages);
 
         List<String> averagesAsString = new ArrayList<>();
         for (Double average : averages) {
             averagesAsString.add(String.valueOf(average));
         }
-        System.out.println(averagesAsString);
         fileWriter.write(outputPath, averagesAsString);
 
     }

@@ -12,7 +12,8 @@ class PictureNameExtractorTest {
             "sunshine, 01222013SunshinePic.jpg",
             "snowflake, 24122019SnowflakePic.jpg",
             "dereks birthday, 01082003Dereks-BirthdayPic.jpg",
-            "nice cat, 24122019nice-catpic.jpg"
+            "nice cat, 24122019nice-catpic.jpg",
+            "'', 01222013Pic.jpg"
     })
     void extract(String expected, String name) {
         String result = pictureNameExtractor.extract(name);

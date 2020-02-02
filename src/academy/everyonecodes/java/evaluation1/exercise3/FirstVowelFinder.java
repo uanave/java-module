@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 public class FirstVowelFinder {
+
+    List<String> vowels = List.of("a", "e", "i", "o", "u");
+
     public Optional<String> find(String input) {
-        List<String> vowels = List.of("a", "e", "i", "o", "u");
         List<String> inputAsList = List.of(input.split(""));
         for (String letter : inputAsList) {
             for (String vowel : vowels) {

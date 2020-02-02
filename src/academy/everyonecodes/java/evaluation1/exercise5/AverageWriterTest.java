@@ -15,12 +15,15 @@ class AverageWriterTest {
     private FileReader fileReader = new FileReader();
     private String inputPath = "src/academy/everyonecodes/java/evaluation1/Files/numbers.txt";
     private String outputPath = "src/academy/everyonecodes/java/evaluation1/Files/output.txt";
+    private String expectedPath = "src/academy/everyonecodes/java/evaluation1/Files/averages_expected.txt";
 
     @Test
     void write() {
         averageWriter.write(inputPath, outputPath);
         List<String> input = fileReader.read(outputPath);
-        List<String> expected = fileReader.read(outputPath);
+        System.out.println(input);
+        List<String> expected = fileReader.read(expectedPath);
+        System.out.println(expected);
         Assertions.assertLinesMatch(expected, input);
     }
 

@@ -2,10 +2,6 @@ package academy.everyonecodes.java.evaluation1.exercise1;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class AuthorEmailRetrieverTest {
     AuthorEmailRetriever authorEmailRetriever = new AuthorEmailRetriever();
@@ -26,6 +22,16 @@ class AuthorEmailRetrieverTest {
                 new User("", "12344560"));
 
         String expected = "";
+
+        String result = authorEmailRetriever.retrieve(input);
+        Assertions.assertEquals(expected, result);
+    }
+    @Test
+    void retrieveWrong() {
+        Comment input = new Comment("ABCD", "blablabla",
+                new User("some-email-com", "12344560"));
+
+        String expected = "some-email-com";
 
         String result = authorEmailRetriever.retrieve(input);
         Assertions.assertEquals(expected, result);
