@@ -12,10 +12,12 @@ public class HappinessDataReader {
     HappinessDataParser happinessDataParser = new HappinessDataParser();
     String inputPath = "src/academy/everyonecodes/java/week7/set2/Files/world-happiness-2017.csv";
 
-    public List<Optional<HappinessRecord>> read() {
-        List<Optional<HappinessRecord>> lines = streamFileReader.readLines(inputPath)
+    public List<HappinessRecord> read() {
+        List<HappinessRecord> lines = streamFileReader.readLines(inputPath)
                 .skip(1)
                 .map(line -> happinessDataParser.parseLine(line))
+                .filter(Optional::isPresent)
+                .map(Optional::get)
                 .collect(Collectors.toList());
         return lines;
     }

@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.Optional;
 
 class HappinessDataReaderTest {
     private HappinessDataReader happinessDataReader = new HappinessDataReader();
@@ -12,25 +11,25 @@ class HappinessDataReaderTest {
 
     @Test
     void readFirst() {
-        List<Optional<HappinessRecord>> oResult = happinessDataReader.read();
-
-        Optional<HappinessRecord> result = oResult.get(0);
+        List<HappinessRecord> result = happinessDataReader.read();
 
         HappinessRecord expected = new HappinessRecord("Lesotho", 139, 3.80800008773804);
-
-        Assertions.assertTrue(result.isPresent());
-        Assertions.assertEquals(expected, result.get());
+        Assertions.assertEquals(expected, result.get(0));
     }
 
     @Test
     void readLast() {
-        List<Optional<HappinessRecord>> oResult = happinessDataReader.read();
-
-        Optional<HappinessRecord> result = oResult.get(153);
+        List<HappinessRecord> result = happinessDataReader.read();
 
         HappinessRecord expected = new HappinessRecord("United States", 14, 6.99300003051758);
+        Assertions.assertEquals(expected, result.get(153));
+    }
 
-        Assertions.assertTrue(result.isPresent());
-        Assertions.assertEquals(expected, result.get());
+    @Test
+    void readSize() {
+        List<HappinessRecord> result = happinessDataReader.read();
+
+        int expectedSize = 155;
+        Assertions.assertEquals(expectedSize, result.size());
     }
 }

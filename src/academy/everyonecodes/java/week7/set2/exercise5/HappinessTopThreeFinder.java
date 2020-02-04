@@ -6,13 +6,11 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class HappinessTopThreeFinder {
-    HappinessDataReader happinessDataReader = new HappinessDataReader();
+    private HappinessDataReader happinessDataReader = new HappinessDataReader();
 
     public List<String> findTopThree() {
-        List<Optional<HappinessRecord>> happinessRecords = happinessDataReader.read();
+        List<HappinessRecord> happinessRecords = happinessDataReader.read();
         List<String> topThreeCountries = happinessRecords.stream()
-                .filter(Optional::isPresent)
-                .map(Optional::get)
                 .sorted(Comparator.comparing(HappinessRecord::getRank))
                 .limit(3)
                 .map(HappinessRecord::toString)
