@@ -8,10 +8,10 @@ import java.util.List;
 
 public class FileLineAppender {
 
-    public void append(String contentRootPath, List<String> input) {
+    public void append(String contentRootPath, String input) {
         Path path = Path.of(contentRootPath);
         try {
-            Files.write(path, input, StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+            Files.write(path, List.of(input), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
         } catch (IOException e) {
             e.printStackTrace();
 

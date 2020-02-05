@@ -18,6 +18,5 @@ public class SortFirst5Test {
 
         List<Integer> expected = List.of(-5, -2, -1, 2);
         Assertions.assertEquals(expected, result);
-
     }
 }

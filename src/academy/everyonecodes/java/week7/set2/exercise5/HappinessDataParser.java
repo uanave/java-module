@@ -15,6 +15,5 @@ public class HappinessDataParser {
             // System.out.println(countryLine);
             return Optional.empty();
         }
-
     }
 }

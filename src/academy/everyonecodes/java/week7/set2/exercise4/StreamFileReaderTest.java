@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class StreamFileReaderTest {
-    StreamFileReader streamFileReader = new StreamFileReader();
+    private StreamFileReader streamFileReader = new StreamFileReader();
     private String path = "src/academy/everyonecodes/java/week7/set2/Files/animals.txt";
 
     @Test
@@ -29,5 +29,4 @@ class StreamFileReaderTest {
         List<String> result = sResult.collect(Collectors.toList());
         Assertions.assertEquals(expected, result);
     }
-
 }

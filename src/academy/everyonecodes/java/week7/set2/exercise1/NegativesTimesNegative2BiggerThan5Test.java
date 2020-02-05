@@ -16,7 +16,6 @@ public class NegativesTimesNegative2BiggerThan5Test {
 
         long expected = 2;
         Assertions.assertEquals(expected, result);
-
     }
 }
 

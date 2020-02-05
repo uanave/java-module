@@ -8,17 +8,16 @@ import java.util.stream.Collectors;
 
 public class HappinessDataReader {
 
-    StreamFileReader streamFileReader = new StreamFileReader();
-    HappinessDataParser happinessDataParser = new HappinessDataParser();
-    String inputPath = "src/academy/everyonecodes/java/week7/set2/Files/world-happiness-2017.csv";
+    private StreamFileReader streamFileReader = new StreamFileReader();
+    private HappinessDataParser happinessDataParser = new HappinessDataParser();
 
     public List<HappinessRecord> read() {
-        List<HappinessRecord> lines = streamFileReader.readLines(inputPath)
+        String inputPath = "src/academy/everyonecodes/java/week7/set2/Files/world-happiness-2017.csv";
+        return streamFileReader.readLines(inputPath)
                 .skip(1)
                 .map(line -> happinessDataParser.parseLine(line))
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .collect(Collectors.toList());
-        return lines;
     }
 }

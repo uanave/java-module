@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 class HappinessSpecialFiveFinderTest {
-    HappinessSpecialFiveFinder happinessSpecialFiveFinder = new HappinessSpecialFiveFinder();
+    private HappinessSpecialFiveFinder happinessSpecialFiveFinder = new HappinessSpecialFiveFinder();
 
     @Test
     void test() {

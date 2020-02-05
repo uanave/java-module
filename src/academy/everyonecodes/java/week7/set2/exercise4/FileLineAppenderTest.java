@@ -11,19 +11,17 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class FileLineAppenderTest {
-    FileLineAppender FileLineAppender = new FileLineAppender();
-    FileReader fileReader = new FileReader();
-    String contentRootPath = "src/academy/everyonecodes/java/week7/set2/Files/appended.txt";
-
-
+    private FileLineAppender FileLineAppender = new FileLineAppender();
+    private FileReader fileReader = new FileReader();
 
     @Test
     void append() {
-        List<String> input1 = List.of("WHAT");
+        String input1 = "WHAT";
 
+        String contentRootPath = "src/academy/everyonecodes/java/week7/set2/Files/appended.txt";
         FileLineAppender.append(contentRootPath, input1);
 
-        List<String> input2 = List.of("NO");
+        String input2 = "NO";
 
         FileLineAppender.append(contentRootPath, input2);
 
