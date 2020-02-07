@@ -19,6 +19,7 @@ class FirstVowelFinderTest {
     })
     void find(String expected, String input) {
         Optional<String> oResult = firstVowelFinder.find(input);
+        Assertions.assertTrue(oResult.isPresent());
         Assertions.assertEquals(expected, oResult.get());
 
     }

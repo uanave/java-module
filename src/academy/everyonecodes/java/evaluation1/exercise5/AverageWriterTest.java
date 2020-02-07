@@ -13,12 +13,12 @@ import java.util.List;
 class AverageWriterTest {
     private AverageWriter averageWriter = new AverageWriter();
     private FileReader fileReader = new FileReader();
-    private String inputPath = "src/academy/everyonecodes/java/evaluation1/Files/numbers.txt";
-    private String outputPath = "src/academy/everyonecodes/java/evaluation1/Files/output.txt";
     private String expectedPath = "src/academy/everyonecodes/java/evaluation1/Files/averages_expected.txt";
 
     @Test
     void write() {
+        String outputPath = "src/academy/everyonecodes/java/evaluation1/Files/output.txt";
+        String inputPath = "src/academy/everyonecodes/java/evaluation1/Files/numbers.txt";
         averageWriter.write(inputPath, outputPath);
         List<String> input = fileReader.read(outputPath);
         System.out.println(input);
@@ -29,7 +29,7 @@ class AverageWriterTest {
 
     @AfterEach
     void delete() {
-        Path path = Path.of("src/academy/everyonecodes/java/evaluation1/Files/output.txt");
+        Path path = Path.of(expectedPath);
         try {
             Files.delete(path);
         } catch (IOException e) {

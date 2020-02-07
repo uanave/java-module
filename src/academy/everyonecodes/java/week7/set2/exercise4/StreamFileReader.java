@@ -12,7 +12,7 @@ public class StreamFileReader {
             return Files.lines(path);
         } catch (IOException e) {
             e.printStackTrace();
+            return Stream.empty();
         }
-        return Stream.empty();
     }
 }

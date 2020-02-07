@@ -12,6 +12,7 @@ public class HappinessTopThreeFinder {
         return happinessRecords.stream()
                 .sorted(Comparator.comparing(HappinessRecord::getRank))
                 .limit(3)
+//                .map(record -> "Country: " + record.getCountry() + ", score: " + record.getScore())
                 .map(HappinessRecord::toString)
                 .collect(Collectors.toList());
     }

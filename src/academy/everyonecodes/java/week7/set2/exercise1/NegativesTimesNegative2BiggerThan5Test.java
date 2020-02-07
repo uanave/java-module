@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.stream.Stream;
 
-public class NegativesTimesNegative2BiggerThan5Test {
+class NegativesTimesNegative2BiggerThan5Test {
     @Test
     void test() {
         long result = Stream.of(1.2, 0.4, -0.1, -2.0, -3.1, 2.0, -2.6)

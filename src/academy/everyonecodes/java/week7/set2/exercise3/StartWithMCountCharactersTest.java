@@ -1,21 +1,21 @@
 package academy.everyonecodes.java.week7.set2.exercise3;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StartWithMCountCharactersTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class StartWithMCountCharactersTest {
+
     @Test
     void test() {
-        List<Integer> result = Stream.of("Mary", "Joe", "Max", "Laura")
+        int result = Stream.of("Mary", "Joe", "Max", "Laura")
                 .filter(name -> name.startsWith("M"))
                 .map(String::length)
-                .collect(Collectors.toList());
+                .reduce(0, Integer::sum);
 
-        List<Integer> expected = List.of(4, 3);
-        Assertions.assertEquals(expected, result);
+        int expected = 7;
+        assertEquals(expected, result);
     }
 }

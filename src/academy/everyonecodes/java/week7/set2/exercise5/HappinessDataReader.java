@@ -2,6 +2,8 @@ package academy.everyonecodes.java.week7.set2.exercise5;
 
 import academy.everyonecodes.java.week7.set2.exercise4.StreamFileReader;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -19,5 +21,6 @@ public class HappinessDataReader {
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .collect(Collectors.toList());
+
     }
 }

@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class SortFirst5Test {
+import static org.junit.jupiter.api.Assertions.*;
+
+class SortFirst5Test {
 
     @Test
     void test() {
@@ -17,6 +19,6 @@ public class SortFirst5Test {
                 .collect(Collectors.toList());
 
         List<Integer> expected = List.of(-5, -2, -1, 2);
-        Assertions.assertEquals(expected, result);
+        assertEquals(expected, result);
     }
 }

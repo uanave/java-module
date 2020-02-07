@@ -1,11 +1,11 @@
 package academy.everyonecodes.java.week7.set2.exercise4;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StreamFileReaderTest {
     private StreamFileReader streamFileReader = new StreamFileReader();
@@ -13,7 +13,8 @@ class StreamFileReaderTest {
 
     @Test
     void readLines() {
-        Stream<String> sResult = streamFileReader.readLines(path);
+        List<String> result = streamFileReader.readLines(path)
+                .collect(Collectors.toList());
 
         List<String> expected = List.of("Giraffe",
                 "Lion",
@@ -25,8 +26,6 @@ class StreamFileReaderTest {
                 "Cat",
                 "Snail",
                 "Mouse");
-
-        List<String> result = sResult.collect(Collectors.toList());
-        Assertions.assertEquals(expected, result);
+        assertEquals(expected, result);
     }
 }

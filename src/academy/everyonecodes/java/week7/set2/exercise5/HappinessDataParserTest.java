@@ -8,9 +8,9 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class HappinessDataParserTest {
+class HappinessDataParserTest {
 
-    public static Stream<Arguments> provideArguments() {
+    private static Stream<Arguments> provideArguments() {
         HappinessRecord record1 = new HappinessRecord("Lesotho", 139, 3.80800008773804);
         HappinessRecord record2 = new HappinessRecord("Ireland", 15, 6.97700023651123);
 

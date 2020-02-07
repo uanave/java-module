@@ -5,10 +5,10 @@ import java.util.List;
 
 public class FileContentReverser {
 
-    FileReader fileReader = new FileReader();
-    FileWriter fileWriter = new FileWriter();
-    String input = "src/academy/everyonecodes/java/evaluation1/Files/lines.txt";
-    String output = "src/academy/everyonecodes/java/evaluation1/Files/lines-reversed.txt";
+    private FileReader fileReader = new FileReader();
+    private FileWriter fileWriter = new FileWriter();
+    private String input = "src/academy/everyonecodes/java/evaluation1/Files/lines.txt";
+    private String output = "src/academy/everyonecodes/java/evaluation1/Files/lines-reversed.txt";
 
     public void reverse(String input, String output) {
         List<String> inputAsLines = fileReader.read(input);
