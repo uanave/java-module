@@ -16,6 +16,7 @@ class SuperheroCallerTest {
         Optional<Superhero> oResult = caller.findSuperhero(input);
 
         Superhero expected = new Superman();
+        assertTrue(oResult.isPresent());
         assertEquals(expected, oResult.get());
     }
 

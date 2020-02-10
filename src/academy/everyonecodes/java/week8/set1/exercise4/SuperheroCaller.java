@@ -9,12 +9,9 @@ public class SuperheroCaller {
 
     public SuperheroCaller() {
         superheroes = new ArrayList<>();
-        Spiderman spiderman = new Spiderman();
-        Batman batman = new Batman();
-        Superman superman = new Superman();
-        superheroes.add(superman);
-        superheroes.add(spiderman);
-        superheroes.add(batman);
+        superheroes.add(new Spiderman());
+        superheroes.add(new Batman());
+        superheroes.add(new Superman());
     }
 
     public Optional<Superhero> findSuperhero(String name) {

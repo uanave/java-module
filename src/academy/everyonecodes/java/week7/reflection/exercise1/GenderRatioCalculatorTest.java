@@ -13,6 +13,7 @@ class GenderRatioCalculatorTest {
         int maleExpected = 482;
         String expected = "Gender ratio : " + femaleExpected + ":" + maleExpected;
         String result = genderRatioCalculator.calculate();
+        System.out.println(result);
         assertEquals(expected, result);
     }
 

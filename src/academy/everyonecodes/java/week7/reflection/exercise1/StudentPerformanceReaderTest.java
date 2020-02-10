@@ -13,7 +13,7 @@ class StudentPerformanceReaderTest {
     void test() {
         List<StudentPerformance> resultList = studentPerformanceReader.read();
 
-        StudentPerformance result = resultList.get(2);
+        StudentPerformance result = resultList.get(1);
 
         StudentPerformance expected = new StudentPerformance("female", "some college", 69, 90, 88);
         assertEquals(expected, result);
