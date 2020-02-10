@@ -8,11 +8,20 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RectangleShaperTest {
+    RectangleShaper rectangleShaper = new RectangleShaper();
 
     @Test
-    void test() {
-        RectangleShaper rectangleShaper = new RectangleShaper();
+    void testRectangleShaper() {
+        String color = rectangleShaper.getColor();
+        String shape = rectangleShaper.getShape();
+        String expectedColor = "Green";
+        String expectedShape = "Rectangle";
+        assertEquals(expectedColor, color);
+        assertEquals(expectedShape, shape);
+    }
 
+    @Test
+    void testColoredShaper() {
         Colored colored = (Colored) rectangleShaper;
         String color = colored.getColor();
         String expectedColor = "Green";

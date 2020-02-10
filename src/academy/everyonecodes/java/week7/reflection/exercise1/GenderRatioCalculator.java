@@ -1,6 +1,5 @@
 package academy.everyonecodes.java.week7.reflection.exercise1;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class GenderRatioCalculator {
@@ -8,7 +7,6 @@ public class GenderRatioCalculator {
         StudentPerformanceReader reader = new StudentPerformanceReader();
         List<StudentPerformance> performances = reader.read();
         long female = performances.stream()
-                .sorted(Comparator.comparing(StudentPerformance::getGender))
                 .map(StudentPerformance::getGender)
                 .filter(gender -> gender.contains("female"))
                 .count();

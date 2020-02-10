@@ -6,14 +6,19 @@ public class Superman implements Superhero {
     private String privateName;
     private String superheroName;
 
+    public Superman() {
+        this.privateName = "Clark Kent";
+        this.superheroName = "Superman";
+    }
+
     @Override
     public String getPrivateName() {
-        return "Clark Kent";
+        return privateName;
     }
 
     @Override
     public String getSuperheroName() {
-        return "Superman";
+        return superheroName;
     }
 
     @Override

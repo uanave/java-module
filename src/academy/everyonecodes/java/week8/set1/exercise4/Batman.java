@@ -6,14 +6,19 @@ public class Batman implements Superhero {
     private String privateName;
     private String superheroName;
 
+    public Batman() {
+        privateName = "Bruce Wayne";
+        superheroName = "Batman";
+    }
+
     @Override
     public String getPrivateName() {
-        return "Bruce Wayne";
+        return privateName;
     }
 
     @Override
     public String getSuperheroName() {
-        return "Batman";
+        return superheroName;
     }
 
     @Override
