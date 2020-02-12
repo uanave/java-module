@@ -3,13 +3,8 @@ package academy.everyonecodes.java.week8.set1.exercise4;
 import java.util.Objects;
 
 public class Spiderman implements Superhero {
-    private String privateName;
-    private String superheroName;
-
-    public Spiderman() {
-        this.privateName = "Peter Parker";
-        this.superheroName = "Spiderman";
-    }
+    private String privateName = "Peter Parker";
+    private String superheroName = "Spiderman";
 
     @Override
     public String getPrivateName() {

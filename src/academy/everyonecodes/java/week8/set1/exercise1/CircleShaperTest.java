@@ -12,11 +12,11 @@ public class CircleShaperTest {
         CircleShaper circleShaper = new CircleShaper();
         String shape3 = circleShaper.getShape();
 
-        Shaper shaper = new CircleShaper();
+        Shaper shaper = circleShaper;
         String shape1 = shaper.getShape();
 
-        CircleShaper anotherShaper = new CircleShaper();
-        String shape2 = anotherShaper.getShape();
+        CircleShaper otherShaper = new CircleShaper();
+        String shape2 = otherShaper.getShape();
 
         String expected = "Circle";
 
