@@ -10,14 +10,9 @@ public class Calculator {
     private List<Operator> operators = Operators.get();
 
     public Optional<Double> calculate(Calculation calculation) {
-        String symbol = calculation.getSymbol();
-        for (Operator operator : operators) {
-            if (symbol.equals(operator.getSymbol())) {
-                double result = operator.operate(calculation.getNumber1(), calculation.getNumber2());
-                return Optional.of(result);
-
-            }
-        }
-        return Optional.empty();
+        return operators.stream()
+                .filter(operator -> operator.getSymbol().equals(calculation.getSymbol()))
+                .map(operator -> operator.operate(calculation.getNumber1(), calculation.getNumber2()))
+                .findFirst();
     }
 }

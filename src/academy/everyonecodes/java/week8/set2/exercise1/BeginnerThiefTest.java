@@ -13,7 +13,8 @@ class BeginnerThiefTest {
             "19, 20",
             "1, 2",
             "11, 12",
-            "0, 1"
+            "0, 1",
+            "-2, -1"
     })
     void test(int expected, int input) {
         Safe safe = new Safe(10, input);

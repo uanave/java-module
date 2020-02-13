@@ -12,7 +12,8 @@ class AdvancedThiefTest {
     @CsvSource({
             "18, 20",
             "16, 18",
-            "0, 2"
+            "0, 2",
+            "-2, 0"
     })
     void test(int expected, int input) {
         Safe safe = new Safe(10, input);
