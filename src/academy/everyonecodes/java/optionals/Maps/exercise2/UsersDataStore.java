@@ -16,12 +16,11 @@ public class UsersDataStore {
     }
 
     public Optional<User> getUserByUsername(String username) {
-        try {
+        if (users.containsKey(username)) {
             return Optional.of(users.get(username));
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Optional.empty();
 
         }
+        return Optional.empty();
+
     }
 }

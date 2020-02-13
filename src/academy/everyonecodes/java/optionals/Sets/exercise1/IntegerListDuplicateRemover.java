@@ -6,7 +6,6 @@ import java.util.List;
 
 public class IntegerListDuplicateRemover {
     public List<Integer> remove(List<Integer> listWithDuplicates) {
-        List<Integer> listWithoutDuplicates = new ArrayList<>(new HashSet<>(listWithDuplicates));
-        return listWithoutDuplicates;
+        return new ArrayList<>(new HashSet<>(listWithDuplicates));
     }
 }

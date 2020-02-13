@@ -7,12 +7,10 @@ import java.util.stream.Collectors;
 
 public class StringsToLengthMapper {
     public Map<String, Integer> map(List<String> input) {
-        try {
-            return input.stream()
-                    .collect(Collectors.toMap(c -> c, String::length));
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+        if (input.isEmpty()) {
             return new HashMap<>();
         }
+        return input.stream()
+                .collect(Collectors.toMap(c -> c, String::length));
     }
 }

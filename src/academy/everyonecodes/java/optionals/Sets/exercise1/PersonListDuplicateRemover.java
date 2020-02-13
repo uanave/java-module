@@ -7,7 +7,6 @@ import java.util.Set;
 
 public class PersonListDuplicateRemover {
     public List<Person> remove(List<Person> listWithDuplicates) {
-        List<Person> personsWithoutDuplicates = new ArrayList<>(new HashSet<>(listWithDuplicates));
-        return personsWithoutDuplicates;
+        return new ArrayList<>(new HashSet<>(listWithDuplicates));
     }
 }

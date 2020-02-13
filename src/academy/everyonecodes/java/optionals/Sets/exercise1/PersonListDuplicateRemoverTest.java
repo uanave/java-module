@@ -13,12 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PersonListDuplicateRemoverTest {
     PersonListDuplicateRemover remover = new PersonListDuplicateRemover();
 
-    private static Stream<Arguments> persons() {
-        Person person1 = new Person("Oana", 22);
-        Person person2 = new Person("Mihai", 21);
-        Person person3 = new Person("Oana", 22);
-        Person person4 = new Person("Mihai", 21);
-        Person person5 = new Person("Oana", 32);
+    private static Stream<Arguments> parameters() {
+        Person person1 = new Person("Lena", 22);
+        Person person2 = new Person("Michel", 21);
+        Person person3 = new Person("Lena", 22);
+        Person person4 = new Person("Michel", 21);
+        Person person5 = new Person("Lena", 32);
 
         return Stream.of(
                 Arguments.of(List.of(person1, person2), List.of(person1, person2, person3, person4)),
@@ -28,7 +28,7 @@ class PersonListDuplicateRemoverTest {
     }
 
     @ParameterizedTest
-    @MethodSource("persons")
+    @MethodSource("parameters")
     void test(List<Person> expected, List<Person> input) {
         List<Person> result = remover.remove(input);
         assertEquals(expected, result);

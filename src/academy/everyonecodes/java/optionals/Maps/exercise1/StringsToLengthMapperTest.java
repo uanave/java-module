@@ -13,16 +13,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class StringsToLengthMapperTest {
     StringsToLengthMapper stringsToLengthMapper = new StringsToLengthMapper();
 
-    private static Stream<Arguments> provide() {
+    private static Stream<Arguments> parameters() {
         return Stream.of(
                 Arguments.of(Map.of("cat", 3, "cow", 3), List.of("cat", "cow")),
-                Arguments.of(Map.of(), List.of())
-                //Arguments.of(Map.of("cat", 3, "cat", 3), List.of("cat", "cat"))
+                Arguments.of(Map.of(), List.of()),
+                Arguments.of(Map.of("cat", 3, "cow", 3, "chicken", 7), List.of("cat", "cow", "chicken"))
         );
     }
 
     @ParameterizedTest
-    @MethodSource("provide")
+    @MethodSource("parameters")
     void testNonValid(Map<String, Integer> expected, List<String> input) {
         Map<String, Integer> result = stringsToLengthMapper.map(input);
         assertEquals(expected, result);

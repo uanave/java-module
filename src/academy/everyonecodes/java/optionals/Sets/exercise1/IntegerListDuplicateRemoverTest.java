@@ -18,7 +18,6 @@ class IntegerListDuplicateRemoverTest {
                 Arguments.of(List.of(1, 2, 3), List.of(1, 2, 3, 1, 2, 3)),
                 Arguments.of(List.of(), List.of()),
                 Arguments.of(List.of(10), List.of(10)),
-                Arguments.of(List.of(-1, 1, -2, 2, 90), List.of(1, 2, 90, -1, -2, -1, 2, 90, 1, -2)),
                 Arguments.of(List.of(-1, 1, -2, 2, 90), List.of(1, 2, 90, -1, -2, -1, 2, 90, 1, -2))
         );
     }
@@ -29,5 +28,4 @@ class IntegerListDuplicateRemoverTest {
         List<Integer> result = remover.remove(input);
         assertEquals(expected, result);
     }
-
 }
