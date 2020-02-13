@@ -21,16 +21,16 @@ class PersonListDuplicateRemoverTest {
         Person person5 = new Person("Oana", 32);
 
         return Stream.of(
-                Arguments.of(Set.of(person1, person2), List.of(person1, person2, person3, person4)),
-                Arguments.of(Set.of(person3, person4, person5), List.of(person1, person2, person3, person4, person5)),
-                Arguments.of(Set.of(), List.of())
+                Arguments.of(List.of(person1, person2), List.of(person1, person2, person3, person4)),
+                Arguments.of(List.of(person1, person5, person2), List.of(person1, person2, person3, person4, person5)),
+                Arguments.of(List.of(), List.of())
         );
     }
 
     @ParameterizedTest
     @MethodSource("persons")
-    void test(Set<Person> expected, List<Person> input) {
-        Set<Person> result = remover.remove(input);
+    void test(List<Person> expected, List<Person> input) {
+        List<Person> result = remover.remove(input);
         assertEquals(expected, result);
     }
 

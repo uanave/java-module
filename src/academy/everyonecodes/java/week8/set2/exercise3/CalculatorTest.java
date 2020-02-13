@@ -15,7 +15,7 @@ class CalculatorTest {
     private static Stream<Arguments> parameters() {
         return Stream.of(
                 Arguments.of(Optional.empty(), new Calculation("$", 2, 2)),
-                Arguments.of(Optional.of(4.0), new Calculation("#", 2, 2)),
+                Arguments.of(Optional.of(4.0), new Calculation("+", 2, 2)),
                 Arguments.of(Optional.empty(), new Calculation("&", 3, 1))
 
         );
@@ -25,6 +25,8 @@ class CalculatorTest {
     @MethodSource("parameters")
     void test(Optional<Double> expected, Calculation calculation) {
         Optional<Double> result = calculator.calculate(calculation);
+        System.out.println(expected.hashCode());
+        System.out.println(result.hashCode());
         assertEquals(expected.hashCode(), result.hashCode());
     }
 }

@@ -4,6 +4,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -12,17 +13,17 @@ class BasicDictionaryTest {
 
     private static Stream<Arguments> arguments() {
         return Stream.of(
-                Arguments.of(Set.of("the", "elegant", "jumped", "up"), "The elegant cat jumped up the table"),
-                Arguments.of(Set.of(), ""),
-                Arguments.of(Set.of(), "Hi house dog cat table chair elephant"),
-                Arguments.of(Set.of("the"), "Hi the house dog cat table chair elephant")
+                Arguments.of(List.of("the", "elegant", "jumped", "up"), "The elegant cat jumped up the table"),
+                Arguments.of(List.of(), ""),
+                Arguments.of(List.of(), "Hi house dog cat table chair elephant"),
+                Arguments.of(List.of("the"), "Hi the house dog cat table chair elephant")
 
         );
     }
 
     @ParameterizedTest
     @MethodSource("arguments")
-    void test(Set<String> expected, String input) {
-        Set<String> result = basicDictionary.findUnknownWords(input);
+    void test(List<String> expected, String input) {
+        List<String> result = basicDictionary.findUnknownWords(input);
     }
 }

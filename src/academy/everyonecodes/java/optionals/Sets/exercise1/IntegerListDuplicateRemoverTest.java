@@ -15,18 +15,18 @@ class IntegerListDuplicateRemoverTest {
 
     private static Stream<Arguments> arguments() {
         return Stream.of(
-                Arguments.of(Set.of(1, 2, 3), List.of(1, 2, 3, 1, 2, 3)),
-                Arguments.of(Set.of(), List.of()),
-                Arguments.of(Set.of(10), List.of(10)),
-                Arguments.of(Set.of(1, 2, 90, -1, -2), List.of(1, 2, 90, -1, -2, -1, 2, 90, 1, -2)),
-                Arguments.of(Set.of(-2, -1, 2, 90, 1), List.of(1, 2, 90, -1, -2, -1, 2, 90, 1, -2))
+                Arguments.of(List.of(1, 2, 3), List.of(1, 2, 3, 1, 2, 3)),
+                Arguments.of(List.of(), List.of()),
+                Arguments.of(List.of(10), List.of(10)),
+                Arguments.of(List.of(-1, 1, -2, 2, 90), List.of(1, 2, 90, -1, -2, -1, 2, 90, 1, -2)),
+                Arguments.of(List.of(-1, 1, -2, 2, 90), List.of(1, 2, 90, -1, -2, -1, 2, 90, 1, -2))
         );
     }
 
     @ParameterizedTest
     @MethodSource("arguments")
-    void test(Set<Integer> expected, List<Integer> input) {
-        Set<Integer> result = remover.remove(input);
+    void test(List<Integer> expected, List<Integer> input) {
+        List<Integer> result = remover.remove(input);
         assertEquals(expected, result);
     }
 
