@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.week8.reflection.exercise;
+package academy.everyonecodes.java.week8.reflection.exercise1;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -17,7 +17,8 @@ class WaiterTest {
                 Arguments.of(List.of("Fork", "Knife"), "Fish"),
                 Arguments.of(List.of(), "IceCream"),
                 Arguments.of(List.of("Fork"), "Pasta"),
-                Arguments.of(List.of("Spoon"), "Soup")
+                Arguments.of(List.of("Spoon"), "Soup"),
+                Arguments.of(List.of(), "")
 
         );
     }

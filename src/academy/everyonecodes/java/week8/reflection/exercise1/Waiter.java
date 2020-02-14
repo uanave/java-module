@@ -1,9 +1,9 @@
-package academy.everyonecodes.java.week8.reflection.exercise;
+package academy.everyonecodes.java.week8.reflection.exercise1;
 
-import academy.everyonecodes.java.week8.reflection.exercise.cutlery.Cutlery;
-import academy.everyonecodes.java.week8.reflection.exercise.cutlery.Fork;
-import academy.everyonecodes.java.week8.reflection.exercise.cutlery.Knife;
-import academy.everyonecodes.java.week8.reflection.exercise.cutlery.Spoon;
+import academy.everyonecodes.java.week8.reflection.exercise1.cutlery.Cutlery;
+import academy.everyonecodes.java.week8.reflection.exercise1.cutlery.Fork;
+import academy.everyonecodes.java.week8.reflection.exercise1.cutlery.Knife;
+import academy.everyonecodes.java.week8.reflection.exercise1.cutlery.Spoon;
 
 import java.util.List;
 import java.util.stream.Collectors;

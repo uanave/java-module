@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.week8.reflection.exercise.cutlery;
+package academy.everyonecodes.java.week8.reflection.exercise1.cutlery;
 
 public interface Cutlery {
     String getName();

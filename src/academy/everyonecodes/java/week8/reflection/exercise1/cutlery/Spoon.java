@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.week8.reflection.exercise.cutlery;
+package academy.everyonecodes.java.week8.reflection.exercise1.cutlery;
 
 public class Spoon implements Cutlery {
 
@@ -9,10 +9,6 @@ public class Spoon implements Cutlery {
 
     @Override
     public boolean isUsedFor(String dish) {
-        if (!dish.isBlank()) {
-            return dish.equals("Soup");
-        }
-
-        return false;
+        return dish.equals("Soup");
     }
 }
