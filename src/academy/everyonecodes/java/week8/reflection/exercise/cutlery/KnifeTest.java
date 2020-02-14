@@ -1,22 +1,22 @@
-package academy.everyonecodes.java.week8.reflection.exercise1;
+package academy.everyonecodes.java.week8.reflection.exercise.cutlery;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class SpoonTest {
-    Spoon spoon = new Spoon();
+class KnifeTest {
+    Knife knife = new Knife();
 
     @ParameterizedTest
     @CsvSource({
-            "false, Fish",
-            "false, Pizza",
-            "false, Pasta",
-            "true, Soup"
+            "true, Fish",
+            "true, Pizza",
+            "false, Soup",
+            "false, ''"
     })
     void testKnife(boolean expected, String dish) {
-        boolean result = spoon.isUsedFor(dish);
+        boolean result = knife.isUsedFor(dish);
         assertEquals(expected, result);
     }
 

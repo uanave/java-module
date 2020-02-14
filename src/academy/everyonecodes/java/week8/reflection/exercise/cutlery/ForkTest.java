@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.week8.reflection.exercise1;
+package academy.everyonecodes.java.week8.reflection.exercise.cutlery;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -13,7 +13,8 @@ class ForkTest {
             "true, Fish",
             "true, Pizza",
             "true, Pasta",
-            "false, Soup"
+            "false, Soup",
+            "false, ''"
     })
     void testFork(boolean expected, String dish) {
         boolean result = fork.isUsedFor(dish);
