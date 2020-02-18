@@ -9,8 +9,8 @@ public class UsersDataStore {
 
     public UsersDataStore() {
         users = new HashMap<>();
-        User user1 = new User("goguGaze", "1234567890@1");
-        User user2 = new User("gigiChelu", "21312#@!!$");
+        User user1 = new User("tom123", "1234567890@1");
+        User user2 = new User("john00", "21312#@!!$");
         users.put(user1.getUsername(), user1);
         users.put(user2.getUsername(), user2);
     }

@@ -14,12 +14,12 @@ class UsersDataStoreTest {
     private UsersDataStore usersDataStore = new UsersDataStore();
 
     private static Stream<Arguments> parameters() {
-        User user1 = new User("goguGaze", "1234567890@1");
-        User user2 = new User("gigiChelu", "21312#@!!$");
+        User user1 = new User("tom123", "1234567890@1");
+        User user2 = new User("john00", "21312#@!!$");
 
         return Stream.of(
-                Arguments.of(Optional.of(user1), "goguGaze"),
-                Arguments.of(Optional.of(user2), "gigiChelu"),
+                Arguments.of(Optional.of(user1), "tom123"),
+                Arguments.of(Optional.of(user2), "john00"),
                 Arguments.of(Optional.empty(), "george")
         );
     }
