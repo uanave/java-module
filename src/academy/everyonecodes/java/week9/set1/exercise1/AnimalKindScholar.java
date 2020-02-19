@@ -7,11 +7,11 @@ public class AnimalKindScholar {
     private List<Animal> animals = Animals.get();
 
     public String elaborate(String keyWord) {
-        String animalNames = getAnimalNames(keyWord);
+        String animalNames = findByKind(keyWord);
         if (!animalNames.isBlank()) {
             return animalNames;
         } else {
-            String animalKind = getAnimalKind(keyWord);
+            String animalKind = findByName(keyWord);
             if (!animalKind.isBlank()) {
                 return animalKind;
             }
@@ -19,7 +19,7 @@ public class AnimalKindScholar {
         return "";
     }
 
-    private String getAnimalNames(String keyWord) {
+    private String findByKind(String keyWord) {
         return animals.stream()
                 .filter(e -> e.getAnimalKind().equals(keyWord))
                 .map(Animal::getName)
@@ -28,7 +28,7 @@ public class AnimalKindScholar {
                 .collect(Collectors.joining(","));
     }
 
-    private String getAnimalKind(String keyWord) {
+    private String findByName(String keyWord) {
         return animals.stream()
                 .filter(animal -> animal.getName().equals(keyWord))
                 .map(Animal::getAnimalKind)

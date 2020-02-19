@@ -11,14 +11,6 @@ public class Discount {
         this.applicableProductNames = applicableProductNames;
     }
 
-    public double getDiscountPercentage() {
-        return discountPercentage;
-    }
-
-    public List<String> getProductNames() {
-        return applicableProductNames;
-    }
-
     public double apply(List<Product> products) {
         return products.stream()
                 .filter(product -> applicableProductNames.contains(product.getName()))
