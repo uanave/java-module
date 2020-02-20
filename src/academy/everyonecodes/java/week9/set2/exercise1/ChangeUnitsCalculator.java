@@ -17,7 +17,9 @@ public class ChangeUnitsCalculator {
         for (MoneyUnit unit : units) {
             int result = currentAmount.divide(unit.getValue(), RoundingMode.DOWN).intValue();
             if (result >= 1) {
-                neededUnits.add(unit);
+                for (int i = 0; i < result; i++) {
+                    neededUnits.add(unit);
+                }
                 currentAmount = currentAmount.remainder(unit.getValue());
             }
         }

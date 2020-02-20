@@ -17,9 +17,15 @@ class ChangeUnitsCalculatorTest {
 
     static Stream<Arguments> arguments() {
         return Stream.of(
+                Arguments.of(List.of(new Euro200(), new Euro200(),
+                        new Euro200(), new Euro200(),
+                        new Euro200(), new Euro200(),
+                        new Euro200(), new Euro200(),
+                        new Euro200(), new Euro200()), new BigDecimal(2000)),
                 Arguments.of(List.of(new Euro100(), new Euro20()), new BigDecimal(120)),
                 Arguments.of(List.of(new Cent50(), new Cent20(), new Cent5()), new BigDecimal("0.75")),
                 Arguments.of(List.of(), new BigDecimal(0))
+
         );
     }
 
