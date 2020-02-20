@@ -4,15 +4,15 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class MoneyUnit {
-    private BigDecimal value;
+    private double value;
     private String currency;
 
-    public MoneyUnit(BigDecimal value, String currency) {
+    public MoneyUnit(double value, String currency) {
         this.value = value;
         this.currency = currency;
     }
 
-    public BigDecimal getValue() {
+    public double getValue() {
         return value;
     }
 
@@ -25,7 +25,7 @@ public class MoneyUnit {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MoneyUnit moneyUnit = (MoneyUnit) o;
-        return Objects.equals(value, moneyUnit.value) &&
+        return Double.compare(moneyUnit.value, value) == 0 &&
                 Objects.equals(currency, moneyUnit.currency);
     }
 

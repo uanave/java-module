@@ -11,39 +11,19 @@ import java.util.List;
 public class ChangeUnitsCalculator {
     List<MoneyUnit> units = EuroUnits.get();
 
-    public List<MoneyUnit> calculate(BigDecimal amount) {
+    public List<MoneyUnit> calculate(double amount) {
         List<MoneyUnit> neededUnits = new ArrayList<>();
-        BigDecimal currentAmount = amount;
+        BigDecimal currentAmount = BigDecimal.valueOf(amount);
         for (MoneyUnit unit : units) {
-            int result = currentAmount.divide(unit.getValue(), RoundingMode.DOWN).intValue();
+            BigDecimal unitValue = BigDecimal.valueOf(unit.getValue());
+            int result = currentAmount.divide(unitValue, RoundingMode.DOWN).intValue();
             if (result >= 1) {
                 for (int i = 0; i < result; i++) {
                     neededUnits.add(unit);
                 }
-                currentAmount = currentAmount.remainder(unit.getValue());
+                currentAmount = currentAmount.remainder(unitValue);
             }
         }
         return neededUnits;
     }
 }
-
-/*
-public class ChangeUnitsCalculator {
-    private List<MoneyUnit> units = EuroUnits.get();
-
-    public List<MoneyUnit> calculate(Double change) {
-        List<MoneyUnit> notes = new ArrayList<>();
-        while (change > 0) {
-            for (MoneyUnit unit : units) {
-                while(unit.getValue() <= change) {
-                    notes.add(unit);
-                    change = BigDecimal.valueOf(change)
-                            .subtract(BigDecimal.valueOf(unit.getValue()))
-                            .doubleValue();
-                }
-            }
-        }
-        return notes;
-    }
-}
-*/

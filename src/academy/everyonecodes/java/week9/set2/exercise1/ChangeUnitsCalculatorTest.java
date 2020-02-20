@@ -21,17 +21,17 @@ class ChangeUnitsCalculatorTest {
                         new Euro200(), new Euro200(),
                         new Euro200(), new Euro200(),
                         new Euro200(), new Euro200(),
-                        new Euro200(), new Euro200()), new BigDecimal(2000)),
-                Arguments.of(List.of(new Euro100(), new Euro20()), new BigDecimal(120)),
-                Arguments.of(List.of(new Cent50(), new Cent20(), new Cent5()), new BigDecimal("0.75")),
-                Arguments.of(List.of(), new BigDecimal(0))
+                        new Euro200(), new Euro200()), 2000.0),
+                Arguments.of(List.of(new Euro100(), new Euro20()), 120.0),
+                Arguments.of(List.of(new Cent50(), new Cent20(), new Cent5()), 0.75),
+                Arguments.of(List.of(), 0.0)
 
         );
     }
 
     @ParameterizedTest
     @MethodSource("arguments")
-    void test(List<MoneyUnit> expected, BigDecimal input) {
+    void test(List<MoneyUnit> expected, double input) {
         List<MoneyUnit> result = changeUnitsCalculator.calculate(input);
         assertEquals(expected.hashCode(), result.hashCode());
     }
