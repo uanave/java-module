@@ -10,6 +10,7 @@ public class CircleShaperTest {
     @Test
     void test() {
         CircleShaper circleShaper = new CircleShaper();
+        Shaper xxx = new CircleShaper();
         String shape3 = circleShaper.getShape();
 
         Shaper shaper = circleShaper;
