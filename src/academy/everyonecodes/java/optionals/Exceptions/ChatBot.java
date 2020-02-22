@@ -1,22 +1,47 @@
-//package academy.everyonecodes.java.optionals.Exceptions;
-//
-//import java.io.IOException;
-//import java.util.Arrays;
-//import java.util.List;
-//import java.util.Scanner;
-//
-//public class ChatBot {
-//    private Scanner scanner = new Scanner(System.in);
-//
-//    public String handle(String input) {
-//
-//        try {
-//
-//        }
-//    }
-//
-//    private boolean parseInput(String input) throws IOException {
-//        List<String> answer = Arrays.asList(input.split(" "));
-//        return (answer.size() == 2);
-//    }
-//}
+package academy.everyonecodes.java.optionals.Exceptions;
+
+import java.util.List;
+
+public class ChatBot {
+
+    public void handle(String input) {
+        List<String> commands = List.of(input.split(" "));
+        try {
+            String firstResponse = handleFirst(commands.get(0));
+            String secondResponse = handleSecond(commands.get(1), commands.get(0));
+            System.out.println(firstResponse + " " + secondResponse);
+        } catch (WrongFirstArgumentException | WrongSecondArgumentException error) {
+            System.out.println(error.getMessage());
+        }
+    }
+
+
+    public String handleFirst(String input) throws WrongFirstArgumentException {
+        if (input.equals("lights")) {
+            return "Lights switched";
+        } else if (input.equals("temperature")) {
+            return "Temperature";
+        }
+        throw new WrongFirstArgumentException(input);
+    }
+
+    public String handleSecond(String input, String type) throws WrongSecondArgumentException {
+        if (type.equals("lights")) {
+            if (input.equals("on") || input.equals("off")) {
+                return input;
+            }
+        } else if (type.equals("temperature")) {
+            try {
+                int value = Integer.parseInt(input);
+                if (value < 30 && value > 0) {
+                    return "raised by " + input;
+                } else if (value < 0 && value > -30) {
+                    return "lowered by " + Math.abs(value);
+                }
+            } catch (NumberFormatException e) {
+                throw new WrongSecondArgumentException(input);
+            }
+        }
+        throw new WrongSecondArgumentException(input);
+    }
+}

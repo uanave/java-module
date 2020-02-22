@@ -1,7 +1,7 @@
 package academy.everyonecodes.java.optionals.Exceptions;
 
-import java.io.IOException;
-
-public class WrongFirstArgumentException extends IOException {
-
+public class WrongFirstArgumentException extends Exception {
+    public WrongFirstArgumentException(String message) {
+        super("Argument not suported: " + message);
+    }
 }
