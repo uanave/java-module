@@ -1,8 +1,14 @@
 package academy.everyonecodes.java.optionals.Exceptions;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.List;
+import java.util.stream.Stream;
 
 class ChatBotTest {
     ChatBot chatBot = new ChatBot();
@@ -18,7 +24,7 @@ class ChatBotTest {
 
     } */
 
-    void testFirstValid(String expected, String input) {
+    void testHandleFirstValid(String expected, String input) {
         Assertions.assertDoesNotThrow(() -> {
             chatBot.handleFirst(input);
         });
@@ -32,7 +38,7 @@ class ChatBotTest {
             "12222",
             "''"
     })
-    void testFirstNonValid(String input) {
+    void testHandleFirstNonValid(String input) {
         Assertions.assertThrows(WrongFirstArgumentException.class, () ->
                 chatBot.handleFirst(input));
     }
@@ -50,7 +56,7 @@ class ChatBotTest {
         Assertions.assertEquals(expected, result);
     }*/
 
-    void testSecondValid(String expected, String input, String type) {
+    void testHandleSecondValid(String expected, String input, String type) {
         Assertions.assertDoesNotThrow(() -> {
             chatBot.handleSecond(input, type);
         });
@@ -64,8 +70,24 @@ class ChatBotTest {
             "boo, lights",
             "'', ''"
     })
-    void testSecondNonValid(String input, String type) {
+    void testHandleSecondNonValid(String input, String type) {
         Assertions.assertThrows(WrongSecondArgumentException.class, () ->
                 chatBot.handleSecond(input, type));
+    }
+
+    private static Stream<Arguments> parameters() {
+        return Stream.of(
+                Arguments.of(List.of("lights", "off"), "lights off"),
+                Arguments.of(List.of("lights", "on"), "lights on"),
+                Arguments.of(List.of("temperature", "5"), "temperature 5"),
+                Arguments.of(List.of("temperature", "-10"), "temperature -10")
+        );
+
+    }
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testGetInput(List<String> expected, String input) {
+        List<String> result = chatBot.getList(input);
+        Assertions.assertEquals(expected, result);
     }
 }
