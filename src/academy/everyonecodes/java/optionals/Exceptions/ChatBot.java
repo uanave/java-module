@@ -18,7 +18,7 @@ public class ChatBot {
     List<String> getList(String input) throws WrongFirstArgumentException {
         List<String> commands = List.of(input.split(" "));
         if (commands.size() != 2) {
-            throw new WrongFirstArgumentException(input);
+            throw new WrongFirstArgumentException("Please enter a valid command!");
         }
         return commands;
     }
