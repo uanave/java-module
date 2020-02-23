@@ -25,18 +25,18 @@ public class ChatBot {
         throw new WrongFirstArgumentException(input);
     }
 
-    String handleSecond(String input, String type) throws WrongSecondArgumentException {
-        if (type.equals("lights")) {
+    String handleSecond(String input, String value) throws WrongSecondArgumentException {
+        if (value.equals("lights")) {
             if (input.equals("on") || input.equals("off")) {
                 return input;
             }
-        } else if (type.equals("temperature")) {
+        } else if (value.equals("temperature")) {
             try {
-                int value = Integer.parseInt(input);
-                if (value < 30 && value > 0) {
+                int degrees = Integer.parseInt(input);
+                if (degrees < 30 && degrees > 0) {
                     return "raised by " + input;
-                } else if (value < 0 && value > -30) {
-                    return "lowered by " + Math.abs(value);
+                } else if (degrees < 0 && degrees > -30) {
+                    return "lowered by " + Math.abs(degrees);
                 }
             } catch (NumberFormatException e) {
                 throw new WrongSecondArgumentException(input);
