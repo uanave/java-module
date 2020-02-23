@@ -5,9 +5,8 @@ import academy.everyonecodes.java.week9.set2.exercise2.Moves.Moves;
 
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
-public class Computer extends Player {
+public class Computer implements Player {
 
 
     @Override

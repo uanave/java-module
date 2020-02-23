@@ -12,27 +12,29 @@ class ChatBotTest {
             "Temperature, temperature",
             "Lights switched, lights"
     })
-    void testFirstValid(String expected, String input) throws WrongFirstArgumentException {
+    /*void testFirstValid(String expected, String input) throws WrongFirstArgumentException {
         String result = chatBot.handleFirst(input);
         Assertions.assertEquals(expected, result);
 
-    }
-
-  /*  void testFirstValid() throws WrongFirstArgumentException {
-        Assertions.assertDoesNotThrow(() -> {});
-
     } */
+
+    void testFirstValid(String expected, String input) {
+        Assertions.assertDoesNotThrow(() -> {
+            chatBot.handleFirst(input);
+        });
+
+    }
 
     @ParameterizedTest
     @CsvSource({
             "Temperature",
             "Lights",
-            "12222"
+            "12222",
+            "''"
     })
-    void testFirstNonValid(String input) throws WrongFirstArgumentException {
-        Assertions.assertThrows(WrongFirstArgumentException.class, () -> {
-            chatBot.handleFirst(input);
-        });
+    void testFirstNonValid(String input) {
+        Assertions.assertThrows(WrongFirstArgumentException.class, () ->
+                chatBot.handleFirst(input));
     }
 
     @ParameterizedTest
@@ -43,13 +45,14 @@ class ChatBotTest {
             "raised by 10, 10, temperature"
     })
 
-//    void testSecondValid(String expected, String input, String type) throws WrongSecondArgumentException {
-//        String result = chatBot.handleSecond(input, type);
-//        Assertions.assertEquals(expected, result);
-//    }
+    /*void testSecondValid(String expected, String input, String type) throws WrongSecondArgumentException {
+        String result = chatBot.handleSecond(input, type);
+        Assertions.assertEquals(expected, result);
+    }*/
 
-    void testSecondValid() throws WrongSecondArgumentException {
+    void testSecondValid(String expected, String input, String type) {
         Assertions.assertDoesNotThrow(() -> {
+            chatBot.handleSecond(input, type);
         });
     }
 
@@ -58,11 +61,11 @@ class ChatBotTest {
             "35, temperature",
             "bla, temperature",
             "-33, temperature",
-            "boo, lights"
+            "boo, lights",
+            "'', ''"
     })
-    void testSecondNonValid(String input, String type) throws WrongSecondArgumentException {
-        Assertions.assertThrows(WrongSecondArgumentException.class, () -> {
-            chatBot.handleSecond(input, type);
-        });
+    void testSecondNonValid(String input, String type) {
+        Assertions.assertThrows(WrongSecondArgumentException.class, () ->
+                chatBot.handleSecond(input, type));
     }
 }

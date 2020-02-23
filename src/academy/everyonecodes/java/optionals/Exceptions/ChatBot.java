@@ -16,7 +16,7 @@ public class ChatBot {
     }
 
 
-    public String handleFirst(String input) throws WrongFirstArgumentException {
+    String handleFirst(String input) throws WrongFirstArgumentException {
         if (input.equals("lights")) {
             return "Lights switched";
         } else if (input.equals("temperature")) {
@@ -25,7 +25,7 @@ public class ChatBot {
         throw new WrongFirstArgumentException(input);
     }
 
-    public String handleSecond(String input, String type) throws WrongSecondArgumentException {
+    String handleSecond(String input, String type) throws WrongSecondArgumentException {
         if (type.equals("lights")) {
             if (input.equals("on") || input.equals("off")) {
                 return input;

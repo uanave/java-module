@@ -7,7 +7,7 @@ public class Application {
         ChatBot chatBot = new ChatBot();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Tell me your command :");
+        System.out.println("What's your command ?");
         String answer = scanner.nextLine();
 
         chatBot.handle(answer);
