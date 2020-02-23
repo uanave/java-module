@@ -83,8 +83,17 @@ class ChatBotTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testGetInput(List<String> expected, String input) throws WrongFirstArgumentException {
+    void testGetInputValid(List<String> expected, String input) throws WrongFirstArgumentException {
         List<String> result = chatBot.getList(input);
         Assertions.assertEquals(expected, result);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"'Argument not suported: Please enter a valid command!', 'lights'",
+            "'Argument not suported: Please enter a valid command!', 'temperature'"}
+
+            )
+    void testGetInputNonValid(String input) throws WrongFirstArgumentException {
+        Assertions.assertThrows(WrongFirstArgumentException.class, () -> chatBot.getList(input));
     }
 }
