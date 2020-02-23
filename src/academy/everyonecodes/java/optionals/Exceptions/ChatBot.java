@@ -5,8 +5,8 @@ import java.util.List;
 public class ChatBot {
 
     public void handle(String input) {
-        List<String> commands = getList(input);
         try {
+            List<String> commands = getList(input);
             String command = handleFirst(commands.get(0));
             String value = handleSecond(commands.get(1), commands.get(0));
             System.out.println(command + " " + value);
@@ -15,8 +15,12 @@ public class ChatBot {
         }
     }
 
-    List<String> getList(String input) {
-        return List.of(input.split(" "));
+    List<String> getList(String input) throws WrongFirstArgumentException {
+        List<String> commands = List.of(input.split(" "));
+        if (commands.size() != 2) {
+            throw new WrongFirstArgumentException(input);
+        }
+        return commands;
     }
 
     String handleFirst(String input) throws WrongFirstArgumentException {

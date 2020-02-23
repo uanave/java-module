@@ -83,7 +83,7 @@ class ChatBotTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testGetInput(List<String> expected, String input) {
+    void testGetInput(List<String> expected, String input) throws WrongFirstArgumentException {
         List<String> result = chatBot.getList(input);
         Assertions.assertEquals(expected, result);
     }
