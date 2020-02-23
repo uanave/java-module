@@ -7,9 +7,9 @@ public class ChatBot {
     public void handle(String input) {
         List<String> commands = getList(input);
         try {
-            String firstResponse = handleFirst(commands.get(0));
-            String secondResponse = handleSecond(commands.get(1), commands.get(0));
-            System.out.println(firstResponse + " " + secondResponse);
+            String command = handleFirst(commands.get(0));
+            String value = handleSecond(commands.get(1), commands.get(0));
+            System.out.println(command + " " + value);
         } catch (WrongFirstArgumentException | WrongSecondArgumentException error) {
             System.out.println(error.getMessage());
         }
@@ -18,7 +18,6 @@ public class ChatBot {
     List<String> getList(String input) {
         return List.of(input.split(" "));
     }
-
 
     String handleFirst(String input) throws WrongFirstArgumentException {
         if (input.equals("lights")) {

@@ -1,7 +1,6 @@
 package academy.everyonecodes.java.optionals.Exceptions;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -13,6 +12,15 @@ import java.util.stream.Stream;
 class ChatBotTest {
     ChatBot chatBot = new ChatBot();
 
+    static Stream<Arguments> parameters() {
+        return Stream.of(
+                Arguments.of(List.of("lights", "off"), "lights off"),
+                Arguments.of(List.of("lightson"), "lightson"),
+                Arguments.of(List.of("temperature", "5"), "temperature 5"),
+                Arguments.of(List.of("temperature", "bla"), "temperature bla")
+        );
+    }
+
     @ParameterizedTest
     @CsvSource({
             "Temperature, temperature",
@@ -23,12 +31,10 @@ class ChatBotTest {
         Assertions.assertEquals(expected, result);
 
     } */
-
     void testHandleFirstValid(String expected, String input) {
         Assertions.assertDoesNotThrow(() -> {
             chatBot.handleFirst(input);
         });
-
     }
 
     @ParameterizedTest
@@ -36,6 +42,7 @@ class ChatBotTest {
             "Temperature",
             "Lights",
             "12222",
+            "temperatureon",
             "''"
     })
     void testHandleFirstNonValid(String input) {
@@ -50,8 +57,7 @@ class ChatBotTest {
             "lowered by 2, -2, temperature",
             "raised by 10, 10, temperature"
     })
-
-    /*void testSecondValid(String expected, String input, String type) throws WrongSecondArgumentException {
+        /*void testSecondValid(String expected, String input, String type) throws WrongSecondArgumentException {
         String result = chatBot.handleSecond(input, type);
         Assertions.assertEquals(expected, result);
     }*/
@@ -75,15 +81,6 @@ class ChatBotTest {
                 chatBot.handleSecond(input, type));
     }
 
-    private static Stream<Arguments> parameters() {
-        return Stream.of(
-                Arguments.of(List.of("lights", "off"), "lights off"),
-                Arguments.of(List.of("lights", "on"), "lights on"),
-                Arguments.of(List.of("temperature", "5"), "temperature 5"),
-                Arguments.of(List.of("temperature", "-10"), "temperature -10")
-        );
-
-    }
     @ParameterizedTest
     @MethodSource("parameters")
     void testGetInput(List<String> expected, String input) {
