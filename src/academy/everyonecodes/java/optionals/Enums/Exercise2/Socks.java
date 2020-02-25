@@ -7,7 +7,7 @@ public enum Socks {
 
     private String description;
 
-    private Socks(String description) {
+    Socks(String description) {
         this.description = description;
     }
 
