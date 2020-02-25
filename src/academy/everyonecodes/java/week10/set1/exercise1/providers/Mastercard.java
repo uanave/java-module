@@ -9,7 +9,7 @@ public class Mastercard extends CreditCard {
 
     @Override
     public boolean isValid(String cardNumber) {
-        List<String> start = List.of("51", "52", "53", "54", "55");
+        List<String> start = List.of("22", "51", "52", "53", "54", "55");
         String startsWith = cardNumber.substring(0, 2);
         return (cardNumber.length() == 16 && start.contains(startsWith));
     }

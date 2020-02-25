@@ -11,8 +11,7 @@ public class Credit {
     List<CreditCard> providers = Providers.get();
 
     public String evaluate(long cardNumber) {
-        String card = cardNumber + "";
-        String finalCard = card.trim();
+        String finalCard = String.valueOf(cardNumber);
 
         if (Luhn.check(finalCard)) {
             Optional<CreditCard> match = providers.stream()

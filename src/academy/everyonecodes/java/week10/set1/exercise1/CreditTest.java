@@ -9,12 +9,12 @@ class CreditTest {
 
     @ParameterizedTest
     @CsvSource({
-            "NOT SUPPORTED, 2221000000000009",
             "AMERICAN EXPRESS, 371449635398431",
             "VISA, 4111111111111111",
             "VISA, 4012888888881881",
             "NOT SUPPORTED, 3530111333300000",
             "INVALID, 0111333300000",
+            "MASTERCARD, 2221000000000009"
     })
     void test(String expected, long input) {
         String result = credit.evaluate(input);
