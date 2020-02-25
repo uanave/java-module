@@ -1,6 +1,6 @@
 package academy.everyonecodes.java.week10.set1.exercise1.providers;
 
-public class AmericanExpress extends CreditCard {
+public class AmericanExpress extends Provider {
     public AmericanExpress() {
         super("AMERICAN EXPRESS");
     }

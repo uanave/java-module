@@ -1,9 +1,9 @@
 package academy.everyonecodes.java.week10.set1.exercise1.providers;
 
-public abstract class CreditCard {
+public abstract class Provider {
     private String cardName;
 
-    public CreditCard(String cardName) {
+    public Provider(String cardName) {
         this.cardName = cardName;
     }
 

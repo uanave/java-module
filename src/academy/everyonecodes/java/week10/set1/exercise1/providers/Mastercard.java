@@ -2,7 +2,7 @@ package academy.everyonecodes.java.week10.set1.exercise1.providers;
 
 import java.util.List;
 
-public class Mastercard extends CreditCard {
+public class Mastercard extends Provider {
     public Mastercard() {
         super("MASTERCARD");
     }

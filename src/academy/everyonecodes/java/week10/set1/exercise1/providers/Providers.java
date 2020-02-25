@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Providers {
 
-    public static List<CreditCard> get() {
+    public static List<Provider> get() {
         return List.of(
                 new AmericanExpress(),
                 new Mastercard(),
