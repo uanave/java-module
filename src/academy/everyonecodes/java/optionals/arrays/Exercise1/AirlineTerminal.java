@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.evaluation2.optionals.Arrays.Exercise1;
+package academy.everyonecodes.java.optionals.arrays.Exercise1;
 
 import java.util.Arrays;
 import java.util.List;

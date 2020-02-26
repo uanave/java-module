@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.evaluation2.optionals.Exceptions;
+package academy.everyonecodes.java.optionals.exceptions;
 
 public class WrongSecondArgumentException extends Exception {
     public WrongSecondArgumentException(String message) {

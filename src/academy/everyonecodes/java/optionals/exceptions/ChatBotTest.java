@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.evaluation2.optionals.Exceptions;
+package academy.everyonecodes.java.optionals.exceptions;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;

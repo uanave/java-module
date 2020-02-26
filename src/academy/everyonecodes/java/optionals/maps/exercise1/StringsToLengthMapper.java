@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.evaluation2.optionals.Maps.exercise1;
+package academy.everyonecodes.java.optionals.maps.exercise1;
 
 import java.util.HashMap;
 import java.util.List;

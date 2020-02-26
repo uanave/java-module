@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.evaluation2.optionals.Enums.Exercise1;
+package academy.everyonecodes.java.optionals.enums.Exercise1;
 
 public enum Size {
     XS,

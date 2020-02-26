@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.evaluation2.optionals.Sets.exercise1;
+package academy.everyonecodes.java.optionals.sets.exercise1;
 
 import java.util.Objects;
 

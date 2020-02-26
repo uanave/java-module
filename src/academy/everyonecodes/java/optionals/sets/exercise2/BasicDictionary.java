@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.evaluation2.optionals.Sets.exercise2;
+package academy.everyonecodes.java.optionals.sets.exercise2;
 
 import java.util.*;
 import java.util.stream.Collectors;

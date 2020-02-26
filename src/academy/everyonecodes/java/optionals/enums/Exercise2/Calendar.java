@@ -1,4 +1,4 @@
-package academy.everyonecodes.java.evaluation2.optionals.Enums.Exercise2;
+package academy.everyonecodes.java.optionals.enums.Exercise2;
 
 import java.time.DayOfWeek;
 import java.time.Month;
